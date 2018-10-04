@@ -1,14 +1,14 @@
 //
-//  AppWorker.swift
+//  OpenIterm.swift
 //  MacUeqt
 //
-//  Created by ueqt on 2018/9/30.
+//  Created by ueqt on 2018/10/4.
 //  Copyright © 2018 Ueqt. All rights reserved.
 //
 
 import Cocoa
 
-struct AppWorker {
+struct OpenIterm {
     func finderCurrentPath() -> String? {
         guard let scriptUrl = Bundle.main.url(forResource: "finderCurrentPath", withExtension: "scpt"),
             let scriptContent = try? String(contentsOf: scriptUrl) else {
@@ -31,4 +31,13 @@ struct AppWorker {
         process.launch()
         process.waitUntilExit()
     }
+//    func run() {
+//        guard let scriptUrl = Bundle.main.url(forResource: "iTerm", withExtension: "scpt"),
+//            let scriptContent = try? String(contentsOf: scriptUrl) else {
+//                return
+//        }
+//
+//        let script = NSAppleScript(source: scriptContent)
+//        script?.executeAndReturnError(nil)
+//    }
 }
