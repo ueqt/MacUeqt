@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904D50CF21663E9200ABC9C9 /* openIterm.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 904D50CE21663E9200ABC9C9 /* openIterm.scpt */; };
+		904D50D221663F5500ABC9C9 /* getFinderCurrentPath.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 904D50D121663F5500ABC9C9 /* getFinderCurrentPath.scpt */; };
 		9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051A78E21663567003D01A6 /* OpenIterm.swift */; };
 		9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 9051A7902166368E003D01A6 /* finderCurrentPath.scpt */; };
 		909238502160D3D00067E758 /* ExtensionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9092384F2160D3D00067E758 /* ExtensionWorker.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		904D50CE21663E9200ABC9C9 /* openIterm.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = openIterm.scpt; sourceTree = "<group>"; };
+		904D50D121663F5500ABC9C9 /* getFinderCurrentPath.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = getFinderCurrentPath.scpt; sourceTree = "<group>"; };
 		9051A78E21663567003D01A6 /* OpenIterm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenIterm.swift; sourceTree = "<group>"; };
 		9051A7902166368E003D01A6 /* finderCurrentPath.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = finderCurrentPath.scpt; sourceTree = "<group>"; };
 		9092384F2160D3D00067E758 /* ExtensionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionWorker.swift; sourceTree = "<group>"; };
@@ -115,10 +119,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		904D50D021663F4500ABC9C9 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				904D50D121663F5500ABC9C9 /* getFinderCurrentPath.scpt */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		909238512160D4CF0067E758 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
 				9051A7902166368E003D01A6 /* finderCurrentPath.scpt */,
+				904D50CE21663E9200ABC9C9 /* openIterm.scpt */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -126,6 +139,7 @@
 		90DA21502160BB6A0044AE39 /* FinderSyncExtension */ = {
 			isa = PBXGroup;
 			children = (
+				904D50D021663F4500ABC9C9 /* Scripts */,
 				90DA21512160BB6A0044AE39 /* FinderSync.swift */,
 				90DA21532160BB6A0044AE39 /* Info.plist */,
 				90DA21542160BB6A0044AE39 /* FinderSyncExtension.entitlements */,
@@ -346,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904D50D221663F5500ABC9C9 /* getFinderCurrentPath.scpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F0F69D2160AB83007C83D1 /* Assets.xcassets in Resources */,
+				904D50CF21663E9200ABC9C9 /* openIterm.scpt in Resources */,
 				9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */,
 				90F0F6A02160AB83007C83D1 /* Main.storyboard in Resources */,
 			);
