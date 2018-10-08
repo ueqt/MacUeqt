@@ -13,7 +13,7 @@ Ueqt's Mac Assistant
 [ ] Cpu usage
 [ ] Memory usage
 [ ] Network usage
-[x ] Start at login
+[x] Start at login
 
 ## 如果 start at login 功能失败
 

@@ -26,7 +26,7 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="OzH-Go-eMn" userLabel="Main View Controller" customClass="MainViewController" customModule="MacUeqt" customModuleProvider="target" sceneMemberID="viewController">
                     <customView key="view" id="i6f-L4-bh5" userLabel="Main View">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="462" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <box title="Finder" translatesAutoresizingMaskIntoConstraints="NO" id="0j5-YH-Nv3">
@@ -55,9 +55,9 @@
                                 </view>
                             </box>
                             <box title="日历" translatesAutoresizingMaskIntoConstraints="NO" id="Mcp-9Y-pjn">
-                                <rect key="frame" x="238" y="166" width="195" height="114"/>
+                                <rect key="frame" x="238" y="166" width="207" height="114"/>
                                 <view key="contentView" id="juJ-eN-tLn">
-                                    <rect key="frame" x="3" y="3" width="189" height="96"/>
+                                    <rect key="frame" x="3" y="3" width="201" height="96"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </box>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ly5-AT-MPb" userLabel="Auto Start Check">
-                                <rect key="frame" x="61" y="18" width="89" height="18"/>
+                                <rect key="frame" x="61" y="18" width="101" height="18"/>
                                 <buttonCell key="cell" type="check" title="登录后启动" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kbx-7t-jYJ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -89,11 +89,13 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="0j5-YH-Nv3" firstAttribute="leading" secondItem="i6f-L4-bh5" secondAttribute="leading" constant="20" symbolic="YES" id="1eP-Ip-U8w"/>
+                            <constraint firstItem="Mcp-9Y-pjn" firstAttribute="height" secondItem="0j5-YH-Nv3" secondAttribute="height" id="4En-YT-V0s"/>
                             <constraint firstItem="Pnz-4I-YtK" firstAttribute="bottom" secondItem="ly5-AT-MPb" secondAttribute="bottom" id="7aL-1k-XwB"/>
                             <constraint firstItem="Pnz-4I-YtK" firstAttribute="leading" secondItem="0j5-YH-Nv3" secondAttribute="leading" id="EDP-tR-Ch3"/>
                             <constraint firstAttribute="trailing" secondItem="Mcp-9Y-pjn" secondAttribute="trailing" constant="20" symbolic="YES" id="KBk-oj-L52"/>
                             <constraint firstItem="0j5-YH-Nv3" firstAttribute="baseline" secondItem="Mcp-9Y-pjn" secondAttribute="baseline" id="O9R-Uk-dFk"/>
                             <constraint firstAttribute="trailing" secondItem="ly5-AT-MPb" secondAttribute="trailing" constant="302" id="ODJ-GE-gVM"/>
+                            <constraint firstItem="Mcp-9Y-pjn" firstAttribute="width" secondItem="0j5-YH-Nv3" secondAttribute="width" id="Pfy-PO-rTa"/>
                             <constraint firstItem="0j5-YH-Nv3" firstAttribute="top" secondItem="Mcp-9Y-pjn" secondAttribute="top" id="WVP-gz-0dF"/>
                             <constraint firstAttribute="bottom" secondItem="Pnz-4I-YtK" secondAttribute="bottom" constant="20" symbolic="YES" id="fq7-nO-0nY"/>
                             <constraint firstItem="Mcp-9Y-pjn" firstAttribute="leading" secondItem="0j5-YH-Nv3" secondAttribute="trailing" constant="20" id="s8B-UR-uQB"/>
