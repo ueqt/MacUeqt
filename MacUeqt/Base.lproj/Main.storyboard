@@ -10,139 +10,117 @@
         <scene sceneID="JPo-4y-FX3">
             <objects>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
-                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
-                        <items>
-                            <menuItem title="MacUeqt" id="1Xt-HY-uBw">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="MacUeqt" systemMenu="apple" id="uQy-DD-JDr">
-                                    <items>
-                                        <menuItem title="Ueqt的传说" id="5kV-Vb-QxS">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="设置…" keyEquivalent="," id="BOF-NM-1cW">
-                                            <connections>
-                                                <segue destination="XfG-lQ-9wD" kind="modal" id="oBH-hA-jPE"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
-                                        <menuItem title="日常" id="7ds-ya-QCc">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="日常" id="6kj-nS-E96">
-                                                <items>
-                                                    <menuItem title="天气" id="c4y-sm-CGR">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="lifeWeather:" target="Lm9-BA-tTO" id="aPS-fB-Bz9"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem isSeparatorItem="YES" id="Y7a-oU-qQr"/>
-                                                    <menuItem title="Weather" id="bf7-hP-HEg">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                    </menuItem>
-                                                </items>
-                                            </menu>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="818-vE-Ypm"/>
-                                        <menuItem title="Finder" id="3Ab-PU-p9o">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Finder" id="QRf-Td-X5z">
-                                                <items>
-                                                    <menuItem title="iTerm" id="G8O-Sv-SdF">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="finderOpenIterm:" target="Lm9-BA-tTO" id="iYp-XU-7JY"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                </items>
-                                            </menu>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="退出" keyEquivalent="q" id="4sb-4s-VLi">
-                                            <connections>
-                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                    <connections>
-                                        <outlet property="delegate" destination="g5w-Sf-qyE" id="18V-B1-bxx"/>
-                                    </connections>
-                                </menu>
-                            </menuItem>
-                        </items>
-                    </menu>
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6"/>
                     <connections>
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MacUeqt" customModuleProvider="target"/>
-                <customObject id="Lm9-BA-tTO" userLabel="Status Item Controller" customClass="StatusItemController" customModule="MacUeqt" customModuleProvider="target">
-                    <connections>
-                        <outlet property="menuController" destination="g5w-Sf-qyE" id="Yxv-NL-OgB"/>
-                        <outlet property="weatherView" destination="glE-kf-xjs" id="2Se-db-7EN"/>
-                    </connections>
-                </customObject>
-                <customObject id="g5w-Sf-qyE" userLabel="Status Menu Controller" customClass="StatusMenuController" customModule="MacUeqt" customModuleProvider="target">
-                    <connections>
-                        <outlet property="menu" destination="uQy-DD-JDr" id="2hv-Lc-z24"/>
-                    </connections>
-                </customObject>
-                <customView id="glE-kf-xjs" userLabel="Weather View" customClass="WeatherView" customModule="MacUeqt" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="334" height="96"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <subviews>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3gl-BT-8Qk" userLabel="City">
-                            <rect key="frame" x="76" y="53" width="28" height="17"/>
-                            <textFieldCell key="cell" lineBreakMode="clipping" title="City" id="lDc-Hg-iFU">
-                                <font key="font" metaFont="system"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lvE-hZ-Ibp" userLabel="Tempurature and Conditions">
-                            <rect key="frame" x="76" y="26" width="176" height="17"/>
-                            <textFieldCell key="cell" lineBreakMode="clipping" title="Tempurature and Conditions" id="xJ5-w4-z01">
-                                <font key="font" metaFont="system"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i28-5j-8yc">
-                            <rect key="frame" x="20" y="23" width="50" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="oLw-r0-kYj"/>
-                            </constraints>
-                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="1bS-8p-CIC"/>
-                        </imageView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="i28-5j-8yc" firstAttribute="centerY" secondItem="glE-kf-xjs" secondAttribute="centerY" id="9H3-ub-21B"/>
-                        <constraint firstItem="3gl-BT-8Qk" firstAttribute="top" secondItem="glE-kf-xjs" secondAttribute="top" constant="26" id="KPx-a5-hAN"/>
-                        <constraint firstItem="lvE-hZ-Ibp" firstAttribute="top" secondItem="3gl-BT-8Qk" secondAttribute="bottom" constant="10" id="VsB-AS-Rnr"/>
-                        <constraint firstAttribute="trailing" secondItem="3gl-BT-8Qk" secondAttribute="trailing" constant="232" id="awI-e8-qCY"/>
-                        <constraint firstItem="i28-5j-8yc" firstAttribute="top" secondItem="glE-kf-xjs" secondAttribute="top" constant="23" id="eOC-L6-46N"/>
-                        <constraint firstItem="i28-5j-8yc" firstAttribute="leading" secondItem="glE-kf-xjs" secondAttribute="leading" constant="20" symbolic="YES" id="i2E-Ry-oOj"/>
-                        <constraint firstItem="3gl-BT-8Qk" firstAttribute="leading" secondItem="lvE-hZ-Ibp" secondAttribute="leading" id="jJT-td-KBp"/>
-                        <constraint firstItem="3gl-BT-8Qk" firstAttribute="leading" secondItem="i28-5j-8yc" secondAttribute="trailing" constant="8" symbolic="YES" id="kQ2-Pt-W7p"/>
-                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="lvE-hZ-Ibp" secondAttribute="trailing" constant="84" id="yTS-Ip-jBV"/>
-                    </constraints>
-                    <connections>
-                        <outlet property="cityTextField" destination="3gl-BT-8Qk" id="Ijd-l4-GjI"/>
-                        <outlet property="currentConditionsTextField" destination="lvE-hZ-Ibp" id="J8G-Wd-sSF"/>
-                        <outlet property="imageView" destination="i28-5j-8yc" id="bWJ-h2-ChQ"/>
-                    </connections>
-                </customView>
-                <customView id="i6f-L4-bh5" userLabel="Main View">
-                    <rect key="frame" x="0.0" y="0.0" width="463" height="324"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
+                <customObject id="Lm9-BA-tTO" userLabel="Status Item Controller" customClass="StatusItemController" customModule="MacUeqt" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="kAb-Zp-8n0">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="OzH-Go-eMn" userLabel="Main View Controller" customClass="MainViewController" customModule="MacUeqt" customModuleProvider="target" sceneMemberID="viewController">
+                    <customView key="view" id="i6f-L4-bh5" userLabel="Main View">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <box title="Finder" translatesAutoresizingMaskIntoConstraints="NO" id="0j5-YH-Nv3">
+                                <rect key="frame" x="17" y="166" width="207" height="114"/>
+                                <view key="contentView" id="aK6-4s-ht0">
+                                    <rect key="frame" x="3" y="3" width="201" height="96"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-Qi-Nbk">
+                                            <rect key="frame" x="9" y="57" width="74" height="32"/>
+                                            <buttonCell key="cell" type="push" title="iTerm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hj8-M8-Y4V">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="doFinderIterm:" target="OzH-Go-eMn" id="9M4-1s-Ek5"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="fRC-Qi-Nbk" secondAttribute="trailing" constant="124" id="FJQ-Cn-03E"/>
+                                        <constraint firstAttribute="bottom" secondItem="fRC-Qi-Nbk" secondAttribute="bottom" constant="64" id="cfG-By-Ojc"/>
+                                        <constraint firstItem="fRC-Qi-Nbk" firstAttribute="top" secondItem="aK6-4s-ht0" secondAttribute="top" constant="11" id="nKl-WR-w2J"/>
+                                        <constraint firstItem="fRC-Qi-Nbk" firstAttribute="leading" secondItem="aK6-4s-ht0" secondAttribute="leading" constant="15" id="wrP-r0-HC2"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                            <box title="日历" translatesAutoresizingMaskIntoConstraints="NO" id="Mcp-9Y-pjn">
+                                <rect key="frame" x="238" y="166" width="195" height="114"/>
+                                <view key="contentView" id="juJ-eN-tLn">
+                                    <rect key="frame" x="3" y="3" width="189" height="96"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </box>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pnz-4I-YtK">
+                                <rect key="frame" x="20" y="20" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="AppIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NUo-i2-Jk3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="doPopupMenu:" target="OzH-Go-eMn" id="d1V-tw-fev"/>
+                                    <outlet property="menu" destination="Y34-UZ-H5P" id="29j-wH-Z6o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0j5-YH-Nv3" firstAttribute="leading" secondItem="i6f-L4-bh5" secondAttribute="leading" constant="20" symbolic="YES" id="1eP-Ip-U8w"/>
+                            <constraint firstAttribute="trailing" secondItem="Mcp-9Y-pjn" secondAttribute="trailing" constant="20" symbolic="YES" id="KBk-oj-L52"/>
+                            <constraint firstItem="0j5-YH-Nv3" firstAttribute="baseline" secondItem="Mcp-9Y-pjn" secondAttribute="baseline" id="O9R-Uk-dFk"/>
+                            <constraint firstItem="0j5-YH-Nv3" firstAttribute="top" secondItem="Mcp-9Y-pjn" secondAttribute="top" id="WVP-gz-0dF"/>
+                            <constraint firstItem="Mcp-9Y-pjn" firstAttribute="leading" secondItem="0j5-YH-Nv3" secondAttribute="trailing" constant="20" id="s8B-UR-uQB"/>
+                            <constraint firstItem="Mcp-9Y-pjn" firstAttribute="leading" secondItem="i6f-L4-bh5" secondAttribute="leading" constant="241" id="utK-PM-sEY"/>
+                            <constraint firstItem="0j5-YH-Nv3" firstAttribute="top" secondItem="i6f-L4-bh5" secondAttribute="top" constant="20" symbolic="YES" id="vs3-XG-toh"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="finderIterm" destination="fRC-Qi-Nbk" id="Qfq-Sc-aG7"/>
+                            <outlet property="popupButton" destination="Pnz-4I-YtK" id="L9o-sK-j7q"/>
+                            <outlet property="popupMenu" destination="Y34-UZ-H5P" id="KJO-xe-qxh"/>
+                        </connections>
+                    </customView>
+                    <connections>
+                        <outlet property="finderItermButton" destination="fRC-Qi-Nbk" id="wYA-Hb-fNn"/>
+                        <outlet property="popupButton" destination="Pnz-4I-YtK" id="kgM-vH-KPk"/>
+                        <outlet property="popupMenu" destination="Y34-UZ-H5P" id="pT8-Qr-Yn8"/>
+                    </connections>
+                </viewController>
+                <customObject id="scm-Db-JJW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu title="PopupMenu" id="Y34-UZ-H5P" userLabel="Popup Menu">
+                    <items>
+                        <menuItem title="Ueqt的传说" id="5kV-Vb-QxS">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="Y4S-tI-g0u"/>
+                        <menuItem title="设置…" keyEquivalent="," id="BOF-NM-1cW">
+                            <connections>
+                                <segue destination="XfG-lQ-9wD" kind="modal" id="oBH-hA-jPE"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                        <menuItem title="退出" keyEquivalent="q" id="4sb-4s-VLi">
+                            <connections>
+                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
+            </objects>
+            <point key="canvasLocation" x="-427" y="670"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -202,4 +180,7 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIcon" width="128" height="128"/>
+    </resources>
 </document>
