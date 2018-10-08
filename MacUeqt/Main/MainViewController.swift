@@ -9,14 +9,8 @@
 import Cocoa
 import ServiceManagement
 
-extension Notification.Name {
-    static let killLauncher = Notification.Name("killLauncher")
-}
-
 class MainViewController: NSViewController {
     let delegate = NSApplication.shared.delegate as! AppDelegate
-    
-    let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
     
     @IBOutlet weak var finderItermButton: NSButton!
     @IBOutlet weak var popupButton: NSButton!
@@ -28,12 +22,6 @@ class MainViewController: NSViewController {
         
         // start at login
         self.autoLaunchCheckbox.state = UserDefaults.standard.bool(forKey: "startAtLogin") ? .on : .off
-        let isRunning = NSWorkspace.shared.runningApplications.contains {
-            $0.bundleIdentifier == self.startAtLoginAppIdentifer
-        }
-        if isRunning {
-            DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier)
-        }
     }
 }
 
@@ -50,8 +38,9 @@ extension MainViewController {
     }
     
     @IBAction func toggleAutoLaunch(_ sender: NSButton) {
+        let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
         let isAuto = sender.state == .on
-        if !SMLoginItemSetEnabled(self.startAtLoginAppIdentifer as CFString, isAuto) {
+        if !SMLoginItemSetEnabled(startAtLoginAppIdentifer as CFString, isAuto) {
             NSLog("set login item failed")
             self.autoLaunchCheckbox.state = isAuto ? .off : .on
         } else {

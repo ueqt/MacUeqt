@@ -8,8 +8,18 @@
 
 import Cocoa
 
+extension Notification.Name {
+    static let killLauncher = Notification.Name("killLauncher")
+}
+
 @NSApplicationMain
-class StartAtLoginAppDelegate: NSObject, NSApplicationDelegate {
+class StartAtLoginAppDelegate: NSObject {
+    @objc func terminate() {
+        NSApp.terminate(nil)
+    }
+}
+
+extension StartAtLoginAppDelegate: NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let mainBundleIdentifier = "ueqt.xu.MacUeqt"
@@ -18,11 +28,17 @@ class StartAtLoginAppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if !isRunning {
+            DistributedNotificationCenter.default().addObserver(self,
+                                                                selector: #selector(self.terminate),
+                                                                name: .killLauncher,
+                                                                object: mainBundleIdentifier)
             var path = Bundle.main.bundlePath as NSString
             for _ in 1...4 {
                 path = path.deletingLastPathComponent as NSString
             }
             NSWorkspace.shared.launchApplication(path as String)
+        } else {
+            self.terminate()
         }
     }
 

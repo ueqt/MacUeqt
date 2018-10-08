@@ -8,6 +8,10 @@
 
 import Cocoa
 
+extension Notification.Name {
+    static let killLauncher = Notification.Name("killLauncher")
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
@@ -45,6 +49,14 @@ extension AppDelegate: NSApplicationDelegate {
             button.action = #selector(togglePopover(_:))
         }
         popover.contentViewController = MainViewController.freshController()
+        
+        let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
+        let isRunning = NSWorkspace.shared.runningApplications.contains {
+            $0.bundleIdentifier == startAtLoginAppIdentifer
+        }
+        if isRunning {
+            DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier)
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
