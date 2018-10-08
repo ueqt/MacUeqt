@@ -16,7 +16,6 @@
                     </connections>
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MacUeqt" customModuleProvider="target"/>
-                <customObject id="Lm9-BA-tTO" userLabel="Status Item Controller" customClass="StatusItemController" customModule="MacUeqt" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,9 +61,12 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </box>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pnz-4I-YtK">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Pnz-4I-YtK">
                                 <rect key="frame" x="20" y="20" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="HdL-R1-NIc"/>
+                                    <constraint firstAttribute="width" constant="24" id="UDn-Qb-WZG"/>
+                                </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="AppIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NUo-i2-Jk3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -74,23 +76,34 @@
                                     <outlet property="menu" destination="Y34-UZ-H5P" id="29j-wH-Z6o"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ly5-AT-MPb" userLabel="Auto Start Check">
+                                <rect key="frame" x="61" y="18" width="89" height="18"/>
+                                <buttonCell key="cell" type="check" title="登录后启动" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kbx-7t-jYJ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleAutoLaunch:" target="OzH-Go-eMn" id="TkO-8f-U4F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="0j5-YH-Nv3" firstAttribute="leading" secondItem="i6f-L4-bh5" secondAttribute="leading" constant="20" symbolic="YES" id="1eP-Ip-U8w"/>
+                            <constraint firstItem="Pnz-4I-YtK" firstAttribute="bottom" secondItem="ly5-AT-MPb" secondAttribute="bottom" id="7aL-1k-XwB"/>
+                            <constraint firstItem="Pnz-4I-YtK" firstAttribute="leading" secondItem="0j5-YH-Nv3" secondAttribute="leading" id="EDP-tR-Ch3"/>
                             <constraint firstAttribute="trailing" secondItem="Mcp-9Y-pjn" secondAttribute="trailing" constant="20" symbolic="YES" id="KBk-oj-L52"/>
                             <constraint firstItem="0j5-YH-Nv3" firstAttribute="baseline" secondItem="Mcp-9Y-pjn" secondAttribute="baseline" id="O9R-Uk-dFk"/>
+                            <constraint firstAttribute="trailing" secondItem="ly5-AT-MPb" secondAttribute="trailing" constant="302" id="ODJ-GE-gVM"/>
                             <constraint firstItem="0j5-YH-Nv3" firstAttribute="top" secondItem="Mcp-9Y-pjn" secondAttribute="top" id="WVP-gz-0dF"/>
+                            <constraint firstAttribute="bottom" secondItem="Pnz-4I-YtK" secondAttribute="bottom" constant="20" symbolic="YES" id="fq7-nO-0nY"/>
                             <constraint firstItem="Mcp-9Y-pjn" firstAttribute="leading" secondItem="0j5-YH-Nv3" secondAttribute="trailing" constant="20" id="s8B-UR-uQB"/>
                             <constraint firstItem="Mcp-9Y-pjn" firstAttribute="leading" secondItem="i6f-L4-bh5" secondAttribute="leading" constant="241" id="utK-PM-sEY"/>
                             <constraint firstItem="0j5-YH-Nv3" firstAttribute="top" secondItem="i6f-L4-bh5" secondAttribute="top" constant="20" symbolic="YES" id="vs3-XG-toh"/>
+                            <constraint firstItem="ly5-AT-MPb" firstAttribute="leading" secondItem="Pnz-4I-YtK" secondAttribute="trailing" constant="19" id="xRf-Qs-xoN"/>
                         </constraints>
-                        <connections>
-                            <outlet property="finderIterm" destination="fRC-Qi-Nbk" id="Qfq-Sc-aG7"/>
-                            <outlet property="popupButton" destination="Pnz-4I-YtK" id="L9o-sK-j7q"/>
-                            <outlet property="popupMenu" destination="Y34-UZ-H5P" id="KJO-xe-qxh"/>
-                        </connections>
                     </customView>
                     <connections>
+                        <outlet property="autoLaunchCheckbox" destination="ly5-AT-MPb" id="8IB-BU-YXE"/>
                         <outlet property="finderItermButton" destination="fRC-Qi-Nbk" id="wYA-Hb-fNn"/>
                         <outlet property="popupButton" destination="Pnz-4I-YtK" id="kgM-vH-KPk"/>
                         <outlet property="popupMenu" destination="Y34-UZ-H5P" id="pT8-Qr-Yn8"/>

@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90197F96216A2A6F0079C027 /* MainViewController.swift */; };
+		903D8338216B8462005BB285 /* StartAtLoginAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D8337216B8462005BB285 /* StartAtLoginAppDelegate.swift */; };
+		903D833C216B8463005BB285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903D833B216B8463005BB285 /* Assets.xcassets */; };
+		903D833F216B8463005BB285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903D833D216B8463005BB285 /* Main.storyboard */; };
+		903D8345216B864C005BB285 /* MacUeqtStartAtLogin.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 903D8335216B8462005BB285 /* MacUeqtStartAtLogin.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		904D50CF21663E9200ABC9C9 /* openIterm.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 904D50CE21663E9200ABC9C9 /* openIterm.scpt */; };
-		904D50D221663F5500ABC9C9 /* getFinderCurrentPath.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 904D50D121663F5500ABC9C9 /* getFinderCurrentPath.scpt */; };
 		9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051A78E21663567003D01A6 /* OpenIterm.swift */; };
 		9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 9051A7902166368E003D01A6 /* finderCurrentPath.scpt */; };
-		909238502160D3D00067E758 /* ExtensionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9092384F2160D3D00067E758 /* ExtensionWorker.swift */; };
-		90DA21522160BB6A0044AE39 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DA21512160BB6A0044AE39 /* FinderSync.swift */; };
-		90DA21572160BB6A0044AE39 /* FinderSyncExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90DA214F2160BB6A0044AE39 /* FinderSyncExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
 		90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F6982160AB81007C83D1 /* AppDelegate.swift */; };
 		90F0F69B2160AB81007C83D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F69A2160AB81007C83D1 /* ViewController.swift */; };
 		90F0F69D2160AB83007C83D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F0F69C2160AB83007C83D1 /* Assets.xcassets */; };
@@ -24,13 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		90DA21552160BB6A0044AE39 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 90F0F68D2160AB81007C83D1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 90DA214E2160BB6A0044AE39;
-			remoteInfo = FinderSyncExtension;
-		};
 		90F0F6A82160AB84007C83D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 90F0F68D2160AB81007C83D1 /* Project object */;
@@ -48,32 +42,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		90DA215B2160BB6A0044AE39 /* Embed App Extensions */ = {
+		9087D3F8216B516E00793503 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				90DA21572160BB6A0044AE39 /* FinderSyncExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90FFB7B0216B794200C3B1DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				903D8345216B864C005BB285 /* MacUeqtStartAtLogin.app in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		90197F96216A2A6F0079C027 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		903D8335216B8462005BB285 /* MacUeqtStartAtLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUeqtStartAtLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		903D8337216B8462005BB285 /* StartAtLoginAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAtLoginAppDelegate.swift; sourceTree = "<group>"; };
+		903D833B216B8463005BB285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		903D833E216B8463005BB285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		903D8340216B8463005BB285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		903D8341216B8463005BB285 /* MacUeqtStartAtLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacUeqtStartAtLogin.entitlements; sourceTree = "<group>"; };
 		904D50CE21663E9200ABC9C9 /* openIterm.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = openIterm.scpt; sourceTree = "<group>"; };
-		904D50D121663F5500ABC9C9 /* getFinderCurrentPath.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = getFinderCurrentPath.scpt; sourceTree = "<group>"; };
 		9051A78E21663567003D01A6 /* OpenIterm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenIterm.swift; sourceTree = "<group>"; };
 		9051A7902166368E003D01A6 /* finderCurrentPath.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = finderCurrentPath.scpt; sourceTree = "<group>"; };
-		9092384F2160D3D00067E758 /* ExtensionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionWorker.swift; sourceTree = "<group>"; };
+		9087D3FA216B51C400793503 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		90DA21422160AD2F0044AE39 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90DA21492160B4E60044AE39 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		90DA214F2160BB6A0044AE39 /* FinderSyncExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FinderSyncExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		90DA21512160BB6A0044AE39 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
-		90DA21532160BB6A0044AE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90DA21542160BB6A0044AE39 /* FinderSyncExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderSyncExtension.entitlements; sourceTree = "<group>"; };
 		90F0F6952160AB81007C83D1 /* MacUeqt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUeqt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F0F6982160AB81007C83D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90F0F69A2160AB81007C83D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +94,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		90DA214C2160BB6A0044AE39 /* Frameworks */ = {
+		903D8332216B8462005BB285 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -101,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,12 +134,24 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		904D50D021663F4500ABC9C9 /* Scripts */ = {
+		903D8336216B8462005BB285 /* MacUeqtStartAtLogin */ = {
 			isa = PBXGroup;
 			children = (
-				904D50D121663F5500ABC9C9 /* getFinderCurrentPath.scpt */,
+				903D8337216B8462005BB285 /* StartAtLoginAppDelegate.swift */,
+				903D833B216B8463005BB285 /* Assets.xcassets */,
+				903D833D216B8463005BB285 /* Main.storyboard */,
+				903D8340216B8463005BB285 /* Info.plist */,
+				903D8341216B8463005BB285 /* MacUeqtStartAtLogin.entitlements */,
 			);
-			path = Scripts;
+			path = MacUeqtStartAtLogin;
+			sourceTree = "<group>";
+		};
+		9087D3F9216B51C400793503 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9087D3FA216B51C400793503 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		909238512160D4CF0067E758 /* Scripts */ = {
@@ -154,18 +171,6 @@
 			path = Finder;
 			sourceTree = "<group>";
 		};
-		90DA21502160BB6A0044AE39 /* FinderSyncExtension */ = {
-			isa = PBXGroup;
-			children = (
-				904D50D021663F4500ABC9C9 /* Scripts */,
-				90DA21512160BB6A0044AE39 /* FinderSync.swift */,
-				90DA21532160BB6A0044AE39 /* Info.plist */,
-				90DA21542160BB6A0044AE39 /* FinderSyncExtension.entitlements */,
-				9092384F2160D3D00067E758 /* ExtensionWorker.swift */,
-			);
-			path = FinderSyncExtension;
-			sourceTree = "<group>";
-		};
 		90F0F68C2160AB81007C83D1 = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +179,9 @@
 				90F0F6972160AB81007C83D1 /* MacUeqt */,
 				90F0F6AA2160AB84007C83D1 /* MacUeqtTests */,
 				90F0F6B52160AB84007C83D1 /* MacUeqtUITests */,
-				90DA21502160BB6A0044AE39 /* FinderSyncExtension */,
+				903D8336216B8462005BB285 /* MacUeqtStartAtLogin */,
 				90F0F6962160AB81007C83D1 /* Products */,
+				9087D3F9216B51C400793503 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,7 +191,7 @@
 				90F0F6952160AB81007C83D1 /* MacUeqt.app */,
 				90F0F6A72160AB84007C83D1 /* MacUeqtTests.xctest */,
 				90F0F6B22160AB84007C83D1 /* MacUeqtUITests.xctest */,
-				90DA214F2160BB6A0044AE39 /* FinderSyncExtension.appex */,
+				903D8335216B8462005BB285 /* MacUeqtStartAtLogin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,22 +233,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		90DA214E2160BB6A0044AE39 /* FinderSyncExtension */ = {
+		903D8334216B8462005BB285 /* MacUeqtStartAtLogin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90DA21582160BB6A0044AE39 /* Build configuration list for PBXNativeTarget "FinderSyncExtension" */;
+			buildConfigurationList = 903D8344216B8463005BB285 /* Build configuration list for PBXNativeTarget "MacUeqtStartAtLogin" */;
 			buildPhases = (
-				90DA214B2160BB6A0044AE39 /* Sources */,
-				90DA214C2160BB6A0044AE39 /* Frameworks */,
-				90DA214D2160BB6A0044AE39 /* Resources */,
+				903D8331216B8462005BB285 /* Sources */,
+				903D8332216B8462005BB285 /* Frameworks */,
+				903D8333216B8462005BB285 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FinderSyncExtension;
-			productName = FinderSyncExtension;
-			productReference = 90DA214F2160BB6A0044AE39 /* FinderSyncExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
+			name = MacUeqtStartAtLogin;
+			productName = MacUeqtStartAtLogin;
+			productReference = 903D8335216B8462005BB285 /* MacUeqtStartAtLogin.app */;
+			productType = "com.apple.product-type.application";
 		};
 		90F0F6942160AB81007C83D1 /* MacUeqt */ = {
 			isa = PBXNativeTarget;
@@ -251,12 +257,12 @@
 				90F0F6912160AB81007C83D1 /* Sources */,
 				90F0F6922160AB81007C83D1 /* Frameworks */,
 				90F0F6932160AB81007C83D1 /* Resources */,
-				90DA215B2160BB6A0044AE39 /* Embed App Extensions */,
+				9087D3F8216B516E00793503 /* Embed App Extensions */,
+				90FFB7B0216B794200C3B1DD /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				90DA21562160BB6A0044AE39 /* PBXTargetDependency */,
 			);
 			name = MacUeqt;
 			productName = MacUeqt;
@@ -309,20 +315,11 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Ueqt;
 				TargetAttributes = {
-					90DA214E2160BB6A0044AE39 = {
+					903D8334216B8462005BB285 = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
-							com.apple.ApplicationGroups.Mac = {
-								enabled = 0;
-							};
-							com.apple.HardenedRuntime = {
-								enabled = 0;
-							};
-							com.apple.Keychain = {
-								enabled = 0;
-							};
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -369,17 +366,18 @@
 				90F0F6942160AB81007C83D1 /* MacUeqt */,
 				90F0F6A62160AB84007C83D1 /* MacUeqtTests */,
 				90F0F6B12160AB84007C83D1 /* MacUeqtUITests */,
-				90DA214E2160BB6A0044AE39 /* FinderSyncExtension */,
+				903D8334216B8462005BB285 /* MacUeqtStartAtLogin */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		90DA214D2160BB6A0044AE39 /* Resources */ = {
+		903D8333216B8462005BB285 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				904D50D221663F5500ABC9C9 /* getFinderCurrentPath.scpt in Resources */,
+				903D833C216B8463005BB285 /* Assets.xcassets in Resources */,
+				903D833F216B8463005BB285 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,12 +409,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		90DA214B2160BB6A0044AE39 /* Sources */ = {
+		903D8331216B8462005BB285 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90DA21522160BB6A0044AE39 /* FinderSync.swift in Sources */,
-				909238502160D3D00067E758 /* ExtensionWorker.swift in Sources */,
+				903D8338216B8462005BB285 /* StartAtLoginAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,11 +447,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		90DA21562160BB6A0044AE39 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 90DA214E2160BB6A0044AE39 /* FinderSyncExtension */;
-			targetProxy = 90DA21552160BB6A0044AE39 /* PBXContainerItemProxy */;
-		};
 		90F0F6A92160AB84007C83D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 90F0F6942160AB81007C83D1 /* MacUeqt */;
@@ -468,6 +460,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		903D833D216B8463005BB285 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				903D833E216B8463005BB285 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		90F0F69E2160AB83007C83D1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -479,40 +479,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		90DA21592160BB6A0044AE39 /* Debug */ = {
+		903D8342216B8463005BB285 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FinderSyncExtension/FinderSyncExtension.entitlements;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JQ24BZWD9H;
-				INFOPLIST_FILE = FinderSyncExtension/Info.plist;
+				INFOPLIST_FILE = MacUeqtStartAtLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ueqt.xu.MacUeqt.FinderSyncExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = ueqt.xu.MacUeqtStartAtLogin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
-		90DA215A2160BB6A0044AE39 /* Release */ = {
+		903D8343216B8463005BB285 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FinderSyncExtension/FinderSyncExtension.entitlements;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JQ24BZWD9H;
-				INFOPLIST_FILE = FinderSyncExtension/Info.plist;
+				INFOPLIST_FILE = MacUeqtStartAtLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ueqt.xu.MacUeqt.FinderSyncExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = ueqt.xu.MacUeqtStartAtLogin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -637,7 +635,6 @@
 		90F0F6BC2160AB84007C83D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -658,7 +655,6 @@
 		90F0F6BD2160AB84007C83D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -761,11 +757,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90DA21582160BB6A0044AE39 /* Build configuration list for PBXNativeTarget "FinderSyncExtension" */ = {
+		903D8344216B8463005BB285 /* Build configuration list for PBXNativeTarget "MacUeqtStartAtLogin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90DA21592160BB6A0044AE39 /* Debug */,
-				90DA215A2160BB6A0044AE39 /* Release */,
+				903D8342216B8463005BB285 /* Debug */,
+				903D8343216B8463005BB285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
