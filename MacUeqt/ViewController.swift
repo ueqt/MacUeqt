@@ -26,10 +26,10 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         NSLog("MacUeqt launched from %@", Bundle.main.bundlePath as NSString)
-
-        let url = URL(string: "https://www.bing.com")
-        let request = URLRequest(url: url!)
-        webView.load(request)
+//
+//        let url = URL(string: "https://www.bing.com")
+//        let request = URLRequest(url: url!)
+//        webView.load(request)
 
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
 //            NSApplication.shared.terminate(self)

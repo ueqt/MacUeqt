@@ -10,7 +10,7 @@ import Cocoa
 import ServiceManagement
 
 class MainViewController: NSViewController {
-    let delegate = NSApplication.shared.delegate as! AppDelegate
+    var statusBarView: StatusBarViewController? = nil
     
     @IBOutlet weak var finderItermButton: NSButton!
     @IBOutlet weak var popupButton: NSButton!
@@ -19,6 +19,8 @@ class MainViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.popupButton.image?.isTemplate = true
         
         // start at login
         self.autoLaunchCheckbox.state = UserDefaults.standard.bool(forKey: "startAtLogin") ? .on : .off
@@ -34,7 +36,7 @@ extension MainViewController {
     @IBAction func doFinderIterm(_ sender: Any) {
         let openIterm = OpenIterm()
         openIterm.run()
-        self.delegate.closePopover(sender: sender)
+        self.statusBarView!.closeMainPopover(sender: sender)
     }
     
     @IBAction func toggleAutoLaunch(_ sender: NSButton) {
@@ -51,7 +53,7 @@ extension MainViewController {
 
 extension MainViewController {
     // MARK: Storyboard instantiation
-    static func freshController() -> MainViewController {
+    static func freshController(statusBarView: StatusBarViewController) -> MainViewController {
         // 1. Get a reference to Main.storyboard
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         // 2. Create a Scene identifier that matches the one set on ui
@@ -60,6 +62,7 @@ extension MainViewController {
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? MainViewController else {
             fatalError("Why cant i find MainViewController? - Check Main.storyboard")
         }
+        viewcontroller.statusBarView = statusBarView
         return viewcontroller
     }
 }

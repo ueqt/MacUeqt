@@ -14,25 +14,12 @@ extension Notification.Name {
 
 @NSApplicationMain
 class AppDelegate: NSObject {
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    let popover = NSPopover()
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
-    @objc func togglePopover(_ sender: Any?) {
-        if popover.isShown {
-            closePopover(sender: sender)
-        } else {
-            showPopover(sender: sender)
-        }
-    }
-    
-    func showPopover(sender: Any?) {
-        if let button = self.statusItem.button {
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-        }
-    }
-    
-    func closePopover(sender: Any?) {
-        popover.performClose(sender)
+    override init() {
+        self.statusItem.length = 120
+        
+        super.init()
     }
 }
 
@@ -40,15 +27,7 @@ extension AppDelegate: NSApplicationDelegate {
     
     // https://www.raywenderlich.com/450-menus-and-popovers-in-menu-bar-apps-for-macos
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let icon = NSImage(named: NSImage.Name("AppIcon"))
-        icon?.isTemplate = true
-        icon?.size = NSSize(width: 20, height: 18)
-        if let button = statusItem.button {
-            button.title = "Ueqt"
-            button.image = icon
-            button.action = #selector(togglePopover(_:))
-        }
-        popover.contentViewController = MainViewController.freshController()
+        self.statusItem.button?.addSubview(StatusBarViewController.freshController().view)
         
         let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
         let isRunning = NSWorkspace.shared.runningApplications.contains {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90124C3A217055C70036445D /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90124C39217055C70036445D /* StatusBarViewController.swift */; };
+		90124C40217082F80036445D /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90124C3F217082F80036445D /* NSDateExtensions.swift */; };
 		90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90197F96216A2A6F0079C027 /* MainViewController.swift */; };
 		903D8338216B8462005BB285 /* StartAtLoginAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D8337216B8462005BB285 /* StartAtLoginAppDelegate.swift */; };
 		903D833C216B8463005BB285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903D833B216B8463005BB285 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		90124C39217055C70036445D /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
+		90124C3F217082F80036445D /* NSDateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		90197F96216A2A6F0079C027 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		903D8335216B8462005BB285 /* MacUeqtStartAtLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUeqtStartAtLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903D8337216B8462005BB285 /* StartAtLoginAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAtLoginAppDelegate.swift; sourceTree = "<group>"; };
@@ -126,12 +130,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		90197F95216A2A5B0079C027 /* Main */ = {
+		90124C3B217057990036445D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				90124C39217055C70036445D /* StatusBarViewController.swift */,
 				90197F96216A2A6F0079C027 /* MainViewController.swift */,
 			);
-			path = Main;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90124C3C21707F700036445D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				90124C3F217082F80036445D /* NSDateExtensions.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		903D8336216B8462005BB285 /* MacUeqtStartAtLogin */ = {
@@ -199,7 +212,8 @@
 		90F0F6972160AB81007C83D1 /* MacUeqt */ = {
 			isa = PBXGroup;
 			children = (
-				90197F95216A2A5B0079C027 /* Main */,
+				90124C3C21707F700036445D /* Utility */,
+				90124C3B217057990036445D /* ViewControllers */,
 				90C27033216784BA00BBDBF8 /* Finder */,
 				909238512160D4CF0067E758 /* Scripts */,
 				90F0F6982160AB81007C83D1 /* AppDelegate.swift */,
@@ -421,7 +435,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90124C3A217055C70036445D /* StatusBarViewController.swift in Sources */,
 				90F0F69B2160AB81007C83D1 /* ViewController.swift in Sources */,
+				90124C40217082F80036445D /* NSDateExtensions.swift in Sources */,
 				90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */,
 				9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */,
 				90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */,
