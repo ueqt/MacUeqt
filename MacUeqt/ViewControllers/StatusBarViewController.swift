@@ -10,7 +10,6 @@ import Foundation
 import Cocoa
 
 class StatusBarViewController: NSViewController {
-    
     @IBOutlet weak var timeLabel: NSTextField!
     @IBOutlet weak var mainIcon: NSButton!
     private let mainPopover = NSPopover()

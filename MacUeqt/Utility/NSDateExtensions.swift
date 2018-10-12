@@ -16,4 +16,10 @@ extension NSDate {
         let second = calendar.component(Calendar.Component.second, from: self as Date)
         return String(format: "%02d:%02d:%02d", hour, minute, second)
     }
+    
+    func date() -> String {
+        let calendar = NSCalendar.current
+        let day = calendar.component(Calendar.Component.day, from: self as Date)
+        return String(format: "%02d", day)
+    }
 }

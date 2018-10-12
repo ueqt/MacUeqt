@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,13 +25,16 @@
             <objects>
                 <viewController storyboardIdentifier="StatusBarViewController" id="rHs-iV-zgH" customClass="StatusBarViewController" customModule="MacUeqt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="cBJ-z6-1ux">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="22"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-u2-5CM">
-                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="AppIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="DiO-CF-cGT">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="q8k-u2-5CM">
+                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="EVH-rM-LPs"/>
+                                    <constraint firstAttribute="height" constant="24" id="GAa-ij-kIc"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="AppIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="DiO-CF-cGT">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -40,8 +42,8 @@
                                     <action selector="toggleMainPopover:" target="rHs-iV-zgH" id="O4F-dw-Tqw"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTR-Ci-knA">
-                                <rect key="frame" x="34" y="2" width="66" height="19"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DTR-Ci-knA">
+                                <rect key="frame" x="22" y="3" width="66" height="19"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="12:31:07" id="to2-f2-4Xv">
                                     <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -50,7 +52,12 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="DTR-Ci-knA" firstAttribute="centerY" secondItem="cBJ-z6-1ux" secondAttribute="centerY" id="bGS-Mg-1Uj"/>
+                            <constraint firstItem="q8k-u2-5CM" firstAttribute="leading" secondItem="cBJ-z6-1ux" secondAttribute="leading" id="1aG-Ix-ce3"/>
+                            <constraint firstAttribute="bottom" secondItem="q8k-u2-5CM" secondAttribute="bottom" id="24K-DQ-wD5"/>
+                            <constraint firstItem="DTR-Ci-knA" firstAttribute="centerY" secondItem="cBJ-z6-1ux" secondAttribute="centerY" id="A1n-u0-hXE"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DTR-Ci-knA" secondAttribute="trailing" constant="20" symbolic="YES" id="KQ5-T0-4S5"/>
+                            <constraint firstItem="DTR-Ci-knA" firstAttribute="leading" secondItem="q8k-u2-5CM" secondAttribute="trailing" id="gNg-SX-ad5"/>
+                            <constraint firstItem="q8k-u2-5CM" firstAttribute="top" secondItem="cBJ-z6-1ux" secondAttribute="top" id="pKB-2G-hnN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -70,14 +77,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="462" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <box title="Finder" translatesAutoresizingMaskIntoConstraints="NO" id="0j5-YH-Nv3">
+                            <box fixedFrame="YES" title="Finder" translatesAutoresizingMaskIntoConstraints="NO" id="0j5-YH-Nv3">
                                 <rect key="frame" x="17" y="166" width="207" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="aK6-4s-ht0">
                                     <rect key="frame" x="3" y="3" width="201" height="96"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-Qi-Nbk">
-                                            <rect key="frame" x="9" y="57" width="74" height="32"/>
+                                            <rect key="frame" x="4" y="63" width="74" height="32"/>
                                             <buttonCell key="cell" type="push" title="iTerm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hj8-M8-Y4V">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -88,15 +96,16 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="fRC-Qi-Nbk" secondAttribute="trailing" constant="124" id="FJQ-Cn-03E"/>
-                                        <constraint firstAttribute="bottom" secondItem="fRC-Qi-Nbk" secondAttribute="bottom" constant="64" id="cfG-By-Ojc"/>
-                                        <constraint firstItem="fRC-Qi-Nbk" firstAttribute="top" secondItem="aK6-4s-ht0" secondAttribute="top" constant="11" id="nKl-WR-w2J"/>
-                                        <constraint firstItem="fRC-Qi-Nbk" firstAttribute="leading" secondItem="aK6-4s-ht0" secondAttribute="leading" constant="15" id="wrP-r0-HC2"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fRC-Qi-Nbk" secondAttribute="bottom" constant="70" id="11W-29-3aw"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fRC-Qi-Nbk" secondAttribute="trailing" constant="20" symbolic="YES" id="RTO-GN-dPB"/>
+                                        <constraint firstItem="fRC-Qi-Nbk" firstAttribute="top" secondItem="aK6-4s-ht0" secondAttribute="top" constant="10" id="lMI-HP-MDH"/>
+                                        <constraint firstItem="fRC-Qi-Nbk" firstAttribute="leading" secondItem="aK6-4s-ht0" secondAttribute="leading" constant="10" id="uXt-xs-9gC"/>
                                     </constraints>
                                 </view>
                             </box>
-                            <box title="日历" translatesAutoresizingMaskIntoConstraints="NO" id="Mcp-9Y-pjn">
+                            <box fixedFrame="YES" title="日历" translatesAutoresizingMaskIntoConstraints="NO" id="Mcp-9Y-pjn">
                                 <rect key="frame" x="238" y="166" width="207" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="juJ-eN-tLn">
                                     <rect key="frame" x="3" y="3" width="201" height="96"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,8 +114,8 @@
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Pnz-4I-YtK">
                                 <rect key="frame" x="20" y="20" width="24" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="HdL-R1-NIc"/>
-                                    <constraint firstAttribute="width" constant="24" id="UDn-Qb-WZG"/>
+                                    <constraint firstAttribute="width" constant="24" id="fl5-bV-rKr"/>
+                                    <constraint firstAttribute="height" constant="24" id="xGh-4h-uEd"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="AppIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NUo-i2-Jk3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -118,7 +127,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ly5-AT-MPb" userLabel="Auto Start Check">
-                                <rect key="frame" x="61" y="18" width="101" height="18"/>
+                                <rect key="frame" x="62" y="18" width="89" height="18"/>
                                 <buttonCell key="cell" type="check" title="登录后启动" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kbx-7t-jYJ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -129,20 +138,11 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="0j5-YH-Nv3" firstAttribute="leading" secondItem="i6f-L4-bh5" secondAttribute="leading" constant="20" symbolic="YES" id="1eP-Ip-U8w"/>
-                            <constraint firstItem="Mcp-9Y-pjn" firstAttribute="height" secondItem="0j5-YH-Nv3" secondAttribute="height" id="4En-YT-V0s"/>
-                            <constraint firstItem="Pnz-4I-YtK" firstAttribute="bottom" secondItem="ly5-AT-MPb" secondAttribute="bottom" id="7aL-1k-XwB"/>
-                            <constraint firstItem="Pnz-4I-YtK" firstAttribute="leading" secondItem="0j5-YH-Nv3" secondAttribute="leading" id="EDP-tR-Ch3"/>
-                            <constraint firstAttribute="trailing" secondItem="Mcp-9Y-pjn" secondAttribute="trailing" constant="20" symbolic="YES" id="KBk-oj-L52"/>
-                            <constraint firstItem="0j5-YH-Nv3" firstAttribute="baseline" secondItem="Mcp-9Y-pjn" secondAttribute="baseline" id="O9R-Uk-dFk"/>
-                            <constraint firstAttribute="trailing" secondItem="ly5-AT-MPb" secondAttribute="trailing" constant="302" id="ODJ-GE-gVM"/>
-                            <constraint firstItem="Mcp-9Y-pjn" firstAttribute="width" secondItem="0j5-YH-Nv3" secondAttribute="width" id="Pfy-PO-rTa"/>
-                            <constraint firstItem="0j5-YH-Nv3" firstAttribute="top" secondItem="Mcp-9Y-pjn" secondAttribute="top" id="WVP-gz-0dF"/>
-                            <constraint firstAttribute="bottom" secondItem="Pnz-4I-YtK" secondAttribute="bottom" constant="20" symbolic="YES" id="fq7-nO-0nY"/>
-                            <constraint firstItem="Mcp-9Y-pjn" firstAttribute="leading" secondItem="0j5-YH-Nv3" secondAttribute="trailing" constant="20" id="s8B-UR-uQB"/>
-                            <constraint firstItem="Mcp-9Y-pjn" firstAttribute="leading" secondItem="i6f-L4-bh5" secondAttribute="leading" constant="241" id="utK-PM-sEY"/>
-                            <constraint firstItem="0j5-YH-Nv3" firstAttribute="top" secondItem="i6f-L4-bh5" secondAttribute="top" constant="20" symbolic="YES" id="vs3-XG-toh"/>
-                            <constraint firstItem="ly5-AT-MPb" firstAttribute="leading" secondItem="Pnz-4I-YtK" secondAttribute="trailing" constant="19" id="xRf-Qs-xoN"/>
+                            <constraint firstItem="ly5-AT-MPb" firstAttribute="leading" secondItem="Pnz-4I-YtK" secondAttribute="trailing" constant="20" id="1qt-3l-hSl"/>
+                            <constraint firstAttribute="bottom" secondItem="ly5-AT-MPb" secondAttribute="bottom" constant="20" id="3XT-Zp-pg1"/>
+                            <constraint firstAttribute="bottom" secondItem="Pnz-4I-YtK" secondAttribute="bottom" constant="20" id="ADK-Y7-LQC"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ly5-AT-MPb" secondAttribute="trailing" constant="20" symbolic="YES" id="bpF-5r-oZy"/>
+                            <constraint firstItem="Pnz-4I-YtK" firstAttribute="leading" secondItem="i6f-L4-bh5" secondAttribute="leading" constant="20" id="cSU-i3-Myo"/>
                         </constraints>
                     </customView>
                     <connections>
@@ -186,36 +186,7 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCx-nr-Ciz">
-                                <rect key="frame" x="344" y="13" width="67" height="32"/>
-                                <buttonCell key="cell" type="push" title="锁屏" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wJ5-K8-lBP">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="lockScreen:" target="XfG-lQ-9wD" id="7qL-bm-G7E"/>
-                                </connections>
-                            </button>
-                            <wkWebView wantsLayer="YES" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tej-Ts-ewu">
-                                <rect key="frame" x="0.0" y="61" width="480" height="209"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="tej-Ts-ewu" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="K9D-Rr-oHg"/>
-                            <constraint firstItem="tej-Ts-ewu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="O32-NH-vt3"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RCx-nr-Ciz" secondAttribute="trailing" constant="75" id="ZA8-4T-gzQ"/>
-                            <constraint firstAttribute="trailing" secondItem="tej-Ts-ewu" secondAttribute="trailing" id="ddb-nh-FHs"/>
-                            <constraint firstAttribute="trailing" secondItem="RCx-nr-Ciz" secondAttribute="trailing" constant="75" id="h0R-Vx-gX0"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="webView" destination="tej-Ts-ewu" id="R5P-L2-OQo"/>
-                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
