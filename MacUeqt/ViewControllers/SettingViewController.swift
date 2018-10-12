@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController {
+class SettingViewController: NSViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBAction func lockScreen(_ sender: Any) {
         let p = Process()
@@ -17,19 +17,15 @@ class ViewController: NSViewController {
         p.arguments = ["-suspend"]
         p.launch()
     }
-    @IBAction func openIterm(_ sender: Any) {
-        let openIterm = OpenIterm()
-        openIterm.run()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NSLog("MacUeqt launched from %@", Bundle.main.bundlePath as NSString)
-//
-//        let url = URL(string: "https://www.bing.com")
-//        let request = URLRequest(url: url!)
-//        webView.load(request)
+
+        let url = URL(string: "https://www.bing.com")
+        let request = URLRequest(url: url!)
+        webView.load(request)
 
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
 //            NSApplication.shared.terminate(self)

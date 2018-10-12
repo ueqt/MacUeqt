@@ -19,7 +19,7 @@
 		9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 9051A7902166368E003D01A6 /* finderCurrentPath.scpt */; };
 		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
 		90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F6982160AB81007C83D1 /* AppDelegate.swift */; };
-		90F0F69B2160AB81007C83D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F69A2160AB81007C83D1 /* ViewController.swift */; };
+		90F0F69B2160AB81007C83D1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F69A2160AB81007C83D1 /* SettingViewController.swift */; };
 		90F0F69D2160AB83007C83D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F0F69C2160AB83007C83D1 /* Assets.xcassets */; };
 		90F0F6A02160AB83007C83D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F0F69E2160AB83007C83D1 /* Main.storyboard */; };
 		90F0F6AC2160AB84007C83D1 /* MacUeqtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F6AB2160AB84007C83D1 /* MacUeqtTests.swift */; };
@@ -84,7 +84,7 @@
 		90DA21492160B4E60044AE39 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		90F0F6952160AB81007C83D1 /* MacUeqt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUeqt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F0F6982160AB81007C83D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90F0F69A2160AB81007C83D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		90F0F69A2160AB81007C83D1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		90F0F69C2160AB83007C83D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90F0F69F2160AB83007C83D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90F0F6A12160AB83007C83D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,6 +133,7 @@
 		90124C3B217057990036445D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				90F0F69A2160AB81007C83D1 /* SettingViewController.swift */,
 				90124C39217055C70036445D /* StatusBarViewController.swift */,
 				90197F96216A2A6F0079C027 /* MainViewController.swift */,
 			);
@@ -217,7 +218,6 @@
 				90C27033216784BA00BBDBF8 /* Finder */,
 				909238512160D4CF0067E758 /* Scripts */,
 				90F0F6982160AB81007C83D1 /* AppDelegate.swift */,
-				90F0F69A2160AB81007C83D1 /* ViewController.swift */,
 				90F0F69C2160AB83007C83D1 /* Assets.xcassets */,
 				90F0F69E2160AB83007C83D1 /* Main.storyboard */,
 				90F0F6A12160AB83007C83D1 /* Info.plist */,
@@ -436,7 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90124C3A217055C70036445D /* StatusBarViewController.swift in Sources */,
-				90F0F69B2160AB81007C83D1 /* ViewController.swift in Sources */,
+				90F0F69B2160AB81007C83D1 /* SettingViewController.swift in Sources */,
 				90124C40217082F80036445D /* NSDateExtensions.swift in Sources */,
 				90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */,
 				9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */,

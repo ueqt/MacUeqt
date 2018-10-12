@@ -178,16 +178,16 @@
             </objects>
             <point key="canvasLocation" x="-427" y="670"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="MacUeqt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="SettingViewController" customModule="MacUeqt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RCx-nr-Ciz">
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCx-nr-Ciz">
                                 <rect key="frame" x="344" y="13" width="67" height="32"/>
                                 <buttonCell key="cell" type="push" title="锁屏" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wJ5-K8-lBP">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -197,35 +197,20 @@
                                     <action selector="lockScreen:" target="XfG-lQ-9wD" id="7qL-bm-G7E"/>
                                 </connections>
                             </button>
-                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tej-Ts-ewu">
+                            <wkWebView wantsLayer="YES" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tej-Ts-ewu">
                                 <rect key="frame" x="0.0" y="61" width="480" height="209"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4eh-hF-rHp">
-                                <rect key="frame" x="87" y="13" width="74" height="32"/>
-                                <buttonCell key="cell" type="push" title="iTerm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mzm-d6-d44">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <connections>
-                                        <action selector="openIterm:" target="XfG-lQ-9wD" id="WUI-9x-2Jt"/>
-                                    </connections>
-                                </buttonCell>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="4eh-hF-rHp" firstAttribute="top" secondItem="tej-Ts-ewu" secondAttribute="bottom" constant="20" symbolic="YES" id="1im-UC-eLd"/>
                             <constraint firstItem="tej-Ts-ewu" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="K9D-Rr-oHg"/>
                             <constraint firstItem="tej-Ts-ewu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="O32-NH-vt3"/>
-                            <constraint firstItem="RCx-nr-Ciz" firstAttribute="leading" relation="lessThanOrEqual" secondItem="4eh-hF-rHp" secondAttribute="trailing" constant="195" id="PfR-hx-ecu"/>
-                            <constraint firstItem="4eh-hF-rHp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="93" id="TfS-TX-Dge"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RCx-nr-Ciz" secondAttribute="trailing" constant="75" id="ZA8-4T-gzQ"/>
                             <constraint firstAttribute="trailing" secondItem="tej-Ts-ewu" secondAttribute="trailing" id="ddb-nh-FHs"/>
-                            <constraint firstAttribute="bottom" secondItem="4eh-hF-rHp" secondAttribute="bottom" constant="20" symbolic="YES" id="gHN-SI-Y6A"/>
                             <constraint firstAttribute="trailing" secondItem="RCx-nr-Ciz" secondAttribute="trailing" constant="75" id="h0R-Vx-gX0"/>
-                            <constraint firstItem="4eh-hF-rHp" firstAttribute="baseline" secondItem="RCx-nr-Ciz" secondAttribute="baseline" id="xVU-xn-JiQ"/>
                         </constraints>
                     </view>
                     <connections>
