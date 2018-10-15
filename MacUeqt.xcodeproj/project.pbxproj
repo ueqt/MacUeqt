@@ -17,7 +17,12 @@
 		904D50CF21663E9200ABC9C9 /* openIterm.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 904D50CE21663E9200ABC9C9 /* openIterm.scpt */; };
 		9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051A78E21663567003D01A6 /* OpenIterm.swift */; };
 		9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 9051A7902166368E003D01A6 /* finderCurrentPath.scpt */; };
+		9053E55F217331D100DFCA3A /* ImageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E55E217331D100DFCA3A /* ImageCaptureViewController.swift */; };
+		9053E5612173335200DFCA3A /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E5602173335200DFCA3A /* PhotoHelper.swift */; };
+		9053E5632173736F00DFCA3A /* VideoCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E5622173736F00DFCA3A /* VideoCustomView.swift */; };
+		9053E565217373EE00DFCA3A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053E564217373EE00DFCA3A /* AVFoundation.framework */; };
 		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
+		90E1A45A2174270700C35736 /* TestCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E1A4592174270700C35736 /* TestCameraViewController.swift */; };
 		90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F6982160AB81007C83D1 /* AppDelegate.swift */; };
 		90F0F69B2160AB81007C83D1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F69A2160AB81007C83D1 /* SettingViewController.swift */; };
 		90F0F69D2160AB83007C83D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F0F69C2160AB83007C83D1 /* Assets.xcassets */; };
@@ -79,9 +84,14 @@
 		904D50CE21663E9200ABC9C9 /* openIterm.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = openIterm.scpt; sourceTree = "<group>"; };
 		9051A78E21663567003D01A6 /* OpenIterm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenIterm.swift; sourceTree = "<group>"; };
 		9051A7902166368E003D01A6 /* finderCurrentPath.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = finderCurrentPath.scpt; sourceTree = "<group>"; };
+		9053E55E217331D100DFCA3A /* ImageCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureViewController.swift; sourceTree = "<group>"; };
+		9053E5602173335200DFCA3A /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
+		9053E5622173736F00DFCA3A /* VideoCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCustomView.swift; sourceTree = "<group>"; };
+		9053E564217373EE00DFCA3A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9087D3FA216B51C400793503 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		90DA21422160AD2F0044AE39 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90DA21492160B4E60044AE39 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		90E1A4592174270700C35736 /* TestCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCameraViewController.swift; sourceTree = "<group>"; };
 		90F0F6952160AB81007C83D1 /* MacUeqt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUeqt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F0F6982160AB81007C83D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90F0F69A2160AB81007C83D1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9053E565217373EE00DFCA3A /* AVFoundation.framework in Frameworks */,
 				9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,9 +144,11 @@
 		90124C3B217057990036445D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				90E1A4592174270700C35736 /* TestCameraViewController.swift */,
 				90F0F69A2160AB81007C83D1 /* SettingViewController.swift */,
 				90124C39217055C70036445D /* StatusBarViewController.swift */,
 				90197F96216A2A6F0079C027 /* MainViewController.swift */,
+				9053E55E217331D100DFCA3A /* ImageCaptureViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -144,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				90124C3F217082F80036445D /* NSDateExtensions.swift */,
+				9053E5602173335200DFCA3A /* PhotoHelper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -160,9 +174,18 @@
 			path = MacUeqtStartAtLogin;
 			sourceTree = "<group>";
 		};
+		9053E566217374D800DFCA3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9053E5622173736F00DFCA3A /* VideoCustomView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9087D3F9216B51C400793503 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9053E564217373EE00DFCA3A /* AVFoundation.framework */,
 				9087D3FA216B51C400793503 /* ServiceManagement.framework */,
 			);
 			name = Frameworks;
@@ -213,6 +236,7 @@
 		90F0F6972160AB81007C83D1 /* MacUeqt */ = {
 			isa = PBXGroup;
 			children = (
+				9053E566217374D800DFCA3A /* Views */,
 				90124C3C21707F700036445D /* Utility */,
 				90124C3B217057990036445D /* ViewControllers */,
 				90C27033216784BA00BBDBF8 /* Finder */,
@@ -438,9 +462,13 @@
 				90124C3A217055C70036445D /* StatusBarViewController.swift in Sources */,
 				90F0F69B2160AB81007C83D1 /* SettingViewController.swift in Sources */,
 				90124C40217082F80036445D /* NSDateExtensions.swift in Sources */,
+				9053E5632173736F00DFCA3A /* VideoCustomView.swift in Sources */,
 				90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */,
+				9053E55F217331D100DFCA3A /* ImageCaptureViewController.swift in Sources */,
 				9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */,
+				9053E5612173335200DFCA3A /* PhotoHelper.swift in Sources */,
 				90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */,
+				90E1A45A2174270700C35736 /* TestCameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

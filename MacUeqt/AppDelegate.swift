@@ -29,12 +29,41 @@ extension AppDelegate: NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.statusItem.button?.addSubview(StatusBarViewController.freshController().view)
         
+        // start at login
         let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
         let isRunning = NSWorkspace.shared.runningApplications.contains {
             $0.bundleIdentifier == startAtLoginAppIdentifer
         }
         if isRunning {
             DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier)
+        }
+        
+        // listener system sleep and awake event, only put in AppDelegate can work...
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(sleepListener), name: NSWorkspace.willSleepNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(sleepListener), name: NSWorkspace.didWakeNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(sleepListener), name: NSWorkspace.screensDidWakeNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(sleepListener), name: NSWorkspace.screensDidSleepNotification, object: nil)
+    }
+    
+    @objc func sleepListener(aNotification: NSNotification) {
+        switch aNotification.name {
+        case NSWorkspace.willSleepNotification:
+            print("Going to sleep")
+        // TODO: prevent sleep
+        case NSWorkspace.didWakeNotification:
+            print("Woke up")
+        case NSWorkspace.screensDidSleepNotification:
+            print("screen sleep")
+        case NSWorkspace.screensDidWakeNotification:
+            print("screen woke up")
+            let photo = PhotoHelper(view: nil)
+            photo.start()
+            sleep(1)
+            photo.capture(imageView: nil)
+            sleep(1)
+            photo.stop()
+        default:
+            print("\(aNotification.name) invoked")
         }
     }
 

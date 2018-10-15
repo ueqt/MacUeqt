@@ -11,11 +11,11 @@ import ServiceManagement
 
 class MainViewController: NSViewController {
     var statusBarView: StatusBarViewController? = nil
-    
+
     @IBOutlet weak var finderItermButton: NSButton!
     @IBOutlet weak var popupButton: NSButton!
     @IBOutlet var popupMenu: NSMenu!
-    @IBOutlet weak var autoLaunchCheckbox: NSButton!
+    @IBOutlet weak var startAtLoginCheckMenu: NSMenuItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class MainViewController: NSViewController {
         self.popupButton.image?.isTemplate = true
         
         // start at login
-        self.autoLaunchCheckbox.state = UserDefaults.standard.bool(forKey: "startAtLogin") ? .on : .off
+        self.startAtLoginCheckMenu.state = UserDefaults.standard.bool(forKey: "startAtLogin") ? .on : .off
     }
 }
 
@@ -39,12 +39,12 @@ extension MainViewController {
         self.statusBarView!.closeMainPopover(sender: sender)
     }
     
-    @IBAction func toggleAutoLaunch(_ sender: NSButton) {
+    @IBAction func toggleStartAtLogin(_ sender: NSMenuItem) {
         let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
         let isAuto = sender.state == .on
         if !SMLoginItemSetEnabled(startAtLoginAppIdentifer as CFString, isAuto) {
             NSLog("set login item failed")
-            self.autoLaunchCheckbox.state = isAuto ? .off : .on
+            self.startAtLoginCheckMenu.state = isAuto ? .off : .on
         } else {
             UserDefaults.standard.set(isAuto, forKey: "startAtLogin")
         }
