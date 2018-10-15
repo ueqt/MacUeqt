@@ -73,7 +73,9 @@ class PhotoHelper: NSObject {
                 let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer!)
                 let image = NSImage.init(data: imageData!)
                 if imageView != nil {
-                    imageView!.image = image
+                    DispatchQueue.main.async {
+                        imageView!.image = image
+                    }
                 }
                 let desktopURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
                 let destinationURL = desktopURL.appendingPathComponent("lock.png")
