@@ -36,6 +36,7 @@ class PhotoHelper: NSObject {
     private var requests = [VNRequest]() // you can do multiple requests at the same time
     var faceDetectionReuqest: VNRequest!
     var faceDir: URL?
+    var timer: Timer?
     
     weak var delegate: PhotoUIDelegate?
     weak var matchDelegate: PhotoMatchDelegate?
@@ -124,10 +125,10 @@ class PhotoHelper: NSObject {
         if !session.isRunning {
             session.startRunning()
         }
-        // 5秒后关摄像头
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
+        // 30秒后关摄像头
+        self.timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) {_ in
             self.stop()
-            print("after 5 seconds")
+            print("after 30 seconds")
             self.matchDelegate?.isMe(isMe: false)
         }
     }
@@ -165,6 +166,10 @@ class PhotoHelper: NSObject {
     func stop() {
         if session.isRunning {
             session.stopRunning()
+        }
+        if self.timer != nil {
+            self.timer?.invalidate()
+            self.timer = nil
         }
     }
 }

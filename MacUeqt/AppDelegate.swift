@@ -98,14 +98,16 @@ extension AppDelegate: PhotoMatchDelegate {
 //                // retry 1 times
 //                self.photo?.start()
 //            } else {
-                // start screen saver
-//                print("start screen saver")
-//                let process = Process()
-//                process.launchPath = "/System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
-//
-//                process.launch()
-//                process.waitUntilExit()
-//            }
+                // put display to sleep
+            // https://stackoverflow.com/questions/7701735/putting-the-display-to-sleep-shiftcontroleject-in-applescript
+                print("put display to sleep")
+                let process = Process()
+                process.launchPath = "/usr/bin/pmset"
+                process.arguments = ["displaysleepnow"]
+
+                process.launch()
+                process.waitUntilExit()
+//           }
         }
     }
 }
