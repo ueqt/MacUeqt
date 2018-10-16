@@ -6,13 +6,26 @@ Ueqt's Mac Assistant
 
 * Only for self usage, so many feature is only tested on my mac.
 
-## Feature
+## I do not need
 
-[x] Open Finder current path in iTerm
+### FinderGo, Go2Shell
+
+[x] Open Finder current path in iTerm from `Main Icon Menu` -> `Finder` -> `iTerm`
+
+### Unlox
+
+[ ] Capture Photos at screen wake up and face detection then face recognition then auto login
+
+### TinyCal(小历)
 [ ] Calendar
+
+### 腾讯电脑管家 
 [ ] Cpu usage
 [ ] Memory usage
 [ ] Network usage
+
+## Other Feature
+
 [x] Start at login
 
 ## 如果 start at login 功能失败

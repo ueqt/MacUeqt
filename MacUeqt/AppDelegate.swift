@@ -56,12 +56,12 @@ extension AppDelegate: NSApplicationDelegate {
             print("screen sleep")
         case NSWorkspace.screensDidWakeNotification:
             print("screen woke up")
-            let photo = PhotoHelper(view: nil)
-            photo.start()
-            sleep(1)
-            photo.capture(imageView: nil)
-            sleep(1)
-            photo.stop()
+//            let photo = PhotoHelper(delegate: nil)
+//            photo.start()
+//            sleep(1)
+//            photo.capture(imageView: nil)
+//            sleep(1)
+//            photo.stop()
         default:
             print("\(aNotification.name) invoked")
         }

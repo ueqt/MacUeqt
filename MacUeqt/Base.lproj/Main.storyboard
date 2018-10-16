@@ -155,9 +155,6 @@
                                 <items>
                                     <menuItem title="登录后启动" id="m8p-VH-Bv8">
                                         <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="toggleStartAtLogin:" target="OzH-Go-eMn" id="rRT-ZC-3Oo"/>
-                                        </connections>
                                     </menuItem>
                                 </items>
                             </menu>
@@ -211,29 +208,29 @@
             <objects>
                 <viewController storyboardIdentifier="TestCameraViewController" id="iXc-ag-gid" customClass="TestCameraViewController" customModule="MacUeqt" customModuleProvider="target" sceneMemberID="viewController">
                     <customView key="view" id="VQV-ml-o2Q" userLabel="Main View">
-                        <rect key="frame" x="0.0" y="0.0" width="462" height="281"/>
+                        <rect key="frame" x="0.0" y="0.0" width="564" height="281"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="u7P-Sg-bHB" customClass="VideoCustomView" customModule="MacUeqt" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="u7P-Sg-bHB" customClass="VideoPreviewView" customModule="MacUeqt" customModuleProvider="target">
                                 <rect key="frame" x="20" y="61" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="6q7-gl-bj4"/>
                                     <constraint firstAttribute="height" constant="200" id="Vdl-fz-8sH"/>
                                 </constraints>
                             </customView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yhk-9S-a8x">
-                                <rect key="frame" x="242" y="61" width="200" height="200"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" mirrorLayoutDirectionWhenInternationalizing="never" translatesAutoresizingMaskIntoConstraints="NO" id="Yhk-9S-a8x">
+                                <rect key="frame" x="344" y="61" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="8nz-Zd-nej"/>
                                     <constraint firstAttribute="height" constant="200" id="puj-EB-pcq"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Nxi-oX-cLh"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" id="Nxi-oX-cLh"/>
                             </imageView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="34" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7I-C5-yy1">
-                                <rect key="frame" x="0.0" y="0.0" width="462" height="40"/>
+                                <rect key="frame" x="0.0" y="20" width="564" height="20"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bS2-IR-Pac">
-                                        <rect key="frame" x="26" y="12" width="89" height="32"/>
+                                        <rect key="frame" x="128" y="-6" width="89" height="30"/>
                                         <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fet-gA-JW5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -243,7 +240,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lue-x6-MLe">
-                                        <rect key="frame" x="137" y="12" width="89" height="32"/>
+                                        <rect key="frame" x="239" y="-7" width="89" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Avm-Dx-kWq"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="mIg-vc-xFe"/>
@@ -257,7 +254,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yrd-OC-qYh">
-                                        <rect key="frame" x="248" y="12" width="89" height="32"/>
+                                        <rect key="frame" x="350" y="-7" width="89" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="scg-Fe-axx"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="xyc-fQ-Hyy"/>
@@ -270,8 +267,8 @@
                                             <action selector="stopCamera:" target="iXc-ag-gid" id="4J2-bT-eG4"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4qS-xP-mxS">
-                                        <rect key="frame" x="359" y="12" width="89" height="32"/>
+                                    <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4qS-xP-mxS">
+                                        <rect key="frame" x="461" y="-7" width="89" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="Oa0-kK-QzE"/>
                                             <constraint firstAttribute="height" constant="21" id="axc-dA-Nda"/>
@@ -286,10 +283,10 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="bS2-IR-Pac" firstAttribute="leading" secondItem="n7I-C5-yy1" secondAttribute="leading" constant="20" id="01a-gX-Mad"/>
+                                    <constraint firstItem="bS2-IR-Pac" firstAttribute="leading" secondItem="n7I-C5-yy1" secondAttribute="leading" constant="20" id="1yX-W1-uKh"/>
                                     <constraint firstItem="4qS-xP-mxS" firstAttribute="centerY" secondItem="bS2-IR-Pac" secondAttribute="centerY" id="2pb-EP-tQ8"/>
                                     <constraint firstItem="4qS-xP-mxS" firstAttribute="width" secondItem="bS2-IR-Pac" secondAttribute="width" id="9wt-JG-Ht5"/>
-                                    <constraint firstAttribute="height" constant="40" id="E0q-Id-h4y"/>
+                                    <constraint firstAttribute="height" constant="20" id="E0q-Id-h4y"/>
                                     <constraint firstItem="yrd-OC-qYh" firstAttribute="centerY" secondItem="bS2-IR-Pac" secondAttribute="centerY" id="HZR-iK-Kac"/>
                                     <constraint firstItem="lue-x6-MLe" firstAttribute="width" secondItem="bS2-IR-Pac" secondAttribute="width" id="jEu-B8-gaJ"/>
                                     <constraint firstItem="lue-x6-MLe" firstAttribute="centerY" secondItem="bS2-IR-Pac" secondAttribute="centerY" id="l3Q-R9-IXh"/>
@@ -309,21 +306,29 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="fbI-Ch-Qaj">
+                                <rect key="frame" x="0.0" y="-1" width="564" height="20"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstItem="u7P-Sg-bHB" firstAttribute="top" secondItem="VQV-ml-o2Q" secondAttribute="top" constant="20" id="3Ps-hW-tj4"/>
                             <constraint firstAttribute="trailing" secondItem="Yhk-9S-a8x" secondAttribute="trailing" constant="20" id="3vh-ga-7Nt"/>
                             <constraint firstItem="n7I-C5-yy1" firstAttribute="leading" secondItem="VQV-ml-o2Q" secondAttribute="leading" id="4DR-9e-y4M"/>
+                            <constraint firstItem="fbI-Ch-Qaj" firstAttribute="leading" secondItem="VQV-ml-o2Q" secondAttribute="leading" id="LX8-3D-ihP"/>
                             <constraint firstItem="u7P-Sg-bHB" firstAttribute="leading" secondItem="VQV-ml-o2Q" secondAttribute="leading" constant="20" id="ODW-7Z-O9f"/>
                             <constraint firstAttribute="trailing" secondItem="n7I-C5-yy1" secondAttribute="trailing" id="PAa-Mb-ILW"/>
                             <constraint firstItem="n7I-C5-yy1" firstAttribute="top" secondItem="u7P-Sg-bHB" secondAttribute="bottom" constant="21" id="QnR-C9-DCd"/>
                             <constraint firstItem="Yhk-9S-a8x" firstAttribute="top" secondItem="VQV-ml-o2Q" secondAttribute="top" constant="20" id="Tks-7J-ghU"/>
-                            <constraint firstAttribute="bottom" secondItem="n7I-C5-yy1" secondAttribute="bottom" id="mZk-e4-YiS"/>
+                            <constraint firstAttribute="trailing" secondItem="fbI-Ch-Qaj" secondAttribute="trailing" id="Xwg-aW-AMV"/>
+                            <constraint firstAttribute="bottom" secondItem="n7I-C5-yy1" secondAttribute="bottom" constant="20" id="mZk-e4-YiS"/>
+                            <constraint firstItem="fbI-Ch-Qaj" firstAttribute="top" secondItem="n7I-C5-yy1" secondAttribute="bottom" constant="2" id="mtG-Su-vRv"/>
+                            <constraint firstAttribute="bottom" secondItem="fbI-Ch-Qaj" secondAttribute="bottom" id="nWK-bL-l6G"/>
                         </constraints>
                     </customView>
                     <connections>
                         <outlet property="captureImage" destination="Yhk-9S-a8x" id="6qM-Xy-PNa"/>
-                        <outlet property="videoView" destination="u7P-Sg-bHB" id="fI2-fu-Nts"/>
+                        <outlet property="previewView" destination="u7P-Sg-bHB" id="wfT-Jj-4LF"/>
+                        <outlet property="progressView" destination="fbI-Ch-Qaj" id="WqI-ec-Eq6"/>
                     </connections>
                 </viewController>
                 <customObject id="v0u-JC-xaJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

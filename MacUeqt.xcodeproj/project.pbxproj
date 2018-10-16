@@ -19,7 +19,7 @@
 		9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 9051A7902166368E003D01A6 /* finderCurrentPath.scpt */; };
 		9053E55F217331D100DFCA3A /* ImageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E55E217331D100DFCA3A /* ImageCaptureViewController.swift */; };
 		9053E5612173335200DFCA3A /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E5602173335200DFCA3A /* PhotoHelper.swift */; };
-		9053E5632173736F00DFCA3A /* VideoCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E5622173736F00DFCA3A /* VideoCustomView.swift */; };
+		9053E5632173736F00DFCA3A /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E5622173736F00DFCA3A /* VideoPreviewView.swift */; };
 		9053E565217373EE00DFCA3A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053E564217373EE00DFCA3A /* AVFoundation.framework */; };
 		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
 		90E1A45A2174270700C35736 /* TestCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E1A4592174270700C35736 /* TestCameraViewController.swift */; };
@@ -86,7 +86,7 @@
 		9051A7902166368E003D01A6 /* finderCurrentPath.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = finderCurrentPath.scpt; sourceTree = "<group>"; };
 		9053E55E217331D100DFCA3A /* ImageCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureViewController.swift; sourceTree = "<group>"; };
 		9053E5602173335200DFCA3A /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
-		9053E5622173736F00DFCA3A /* VideoCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCustomView.swift; sourceTree = "<group>"; };
+		9053E5622173736F00DFCA3A /* VideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
 		9053E564217373EE00DFCA3A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9087D3FA216B51C400793503 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		90DA21422160AD2F0044AE39 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		9053E566217374D800DFCA3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9053E5622173736F00DFCA3A /* VideoCustomView.swift */,
+				9053E5622173736F00DFCA3A /* VideoPreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,7 +462,7 @@
 				90124C3A217055C70036445D /* StatusBarViewController.swift in Sources */,
 				90F0F69B2160AB81007C83D1 /* SettingViewController.swift in Sources */,
 				90124C40217082F80036445D /* NSDateExtensions.swift in Sources */,
-				9053E5632173736F00DFCA3A /* VideoCustomView.swift in Sources */,
+				9053E5632173736F00DFCA3A /* VideoPreviewView.swift in Sources */,
 				90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */,
 				9053E55F217331D100DFCA3A /* ImageCaptureViewController.swift in Sources */,
 				9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */,

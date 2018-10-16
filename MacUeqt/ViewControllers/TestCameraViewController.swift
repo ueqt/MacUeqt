@@ -8,17 +8,21 @@
 
 import Cocoa
 import ServiceManagement
+import Vision
+import AVFoundation
 
 class TestCameraViewController: NSViewController {
     var photo: PhotoHelper? = nil
-
-    @IBOutlet weak var videoView: VideoCustomView!
+    var faceRectangles = [NSView]()
+    
+    @IBOutlet weak var previewView: VideoPreviewView!
     @IBOutlet weak var captureImage: NSImageView!
+    @IBOutlet weak var progressView: NSProgressIndicator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.photo = PhotoHelper(view: self.videoView)
+        self.photo = PhotoHelper(delegate: self)
     }
 }
 
@@ -41,5 +45,30 @@ extension TestCameraViewController {
     }
     @IBAction func stopCamera(_ sender: Any) {
         self.photo?.stop()
+    }
+}
+
+extension TestCameraViewController: PhotoUIDelegate {
+    func removeFaceRectangles() {
+        for faceRectangle in self.faceRectangles {
+            faceRectangle.removeFromSuperview()
+        }
+        self.faceRectangles.removeAll()
+    }
+    
+    func faceIdentified(faces: [NSImage]) {
+        self.view.window?.close()
+    }
+    
+    func setProgress(value: Double) {
+        self.progressView?.doubleValue = value
+    }
+    
+    func getCameraView() -> NSView {
+        return self.previewView
+    }
+    
+    func showImage(image: NSImage) {
+        self.captureImage.image = image
     }
 }
