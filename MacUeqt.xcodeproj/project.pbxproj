@@ -22,6 +22,7 @@
 		9053E5632173736F00DFCA3A /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E5622173736F00DFCA3A /* VideoPreviewView.swift */; };
 		9053E565217373EE00DFCA3A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053E564217373EE00DFCA3A /* AVFoundation.framework */; };
 		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
+		90B54F762175C6DE007029D2 /* loginSystem.sh in Resources */ = {isa = PBXBuildFile; fileRef = 90B54F752175C6DE007029D2 /* loginSystem.sh */; };
 		90E1A45A2174270700C35736 /* TestCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E1A4592174270700C35736 /* TestCameraViewController.swift */; };
 		90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F6982160AB81007C83D1 /* AppDelegate.swift */; };
 		90F0F69B2160AB81007C83D1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F69A2160AB81007C83D1 /* SettingViewController.swift */; };
@@ -89,6 +90,7 @@
 		9053E5622173736F00DFCA3A /* VideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
 		9053E564217373EE00DFCA3A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9087D3FA216B51C400793503 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		90B54F752175C6DE007029D2 /* loginSystem.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = loginSystem.sh; sourceTree = "<group>"; };
 		90DA21422160AD2F0044AE39 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90DA21492160B4E60044AE39 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		90E1A4592174270700C35736 /* TestCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCameraViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				9051A7902166368E003D01A6 /* finderCurrentPath.scpt */,
 				904D50CE21663E9200ABC9C9 /* openIterm.scpt */,
+				90B54F752175C6DE007029D2 /* loginSystem.sh */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				904D50CF21663E9200ABC9C9 /* openIterm.scpt in Resources */,
 				9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */,
 				90F0F6A02160AB83007C83D1 /* Main.storyboard in Resources */,
+				90B54F762175C6DE007029D2 /* loginSystem.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

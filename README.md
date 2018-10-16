@@ -14,7 +14,7 @@ Ueqt's Mac Assistant
 
 ### Unlox
 
-[ ] Capture Photos at screen wake up and face detection then face recognition then auto login
+[x] Capture Photos at screen wake up and face detection then face recognition then auto login
 
 ### TinyCal(小历)
 [ ] Calendar
@@ -40,3 +40,13 @@ Ueqt's Mac Assistant
 # 重置数据库
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 ```
+
+## additional install
+
+```
+pip3 install face_recognition
+```
+
+take a photo put it under `~/.macueqt/face_known/ueqt.png`
+
+copy `MacUeqt\Scripts\loginSystem.sh` to `~/.macueqt/loginSystem.sh` and change `passwordhere` to your real password, then it can auto unlock

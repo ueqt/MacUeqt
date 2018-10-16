@@ -15,6 +15,8 @@ extension Notification.Name {
 @NSApplicationMain
 class AppDelegate: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+//    var tryLoginCount = 0
+    var photo: PhotoHelper? = nil
     
     override init() {
         self.statusItem.length = 120
@@ -56,6 +58,9 @@ extension AppDelegate: NSApplicationDelegate {
             print("screen sleep")
         case NSWorkspace.screensDidWakeNotification:
             print("screen woke up")
+//            self.tryLoginCount = 0
+            self.photo = PhotoHelper(delegate: nil, matchDelegate: self)
+            self.photo!.start()
 //            let photo = PhotoHelper(delegate: nil)
 //            photo.start()
 //            sleep(1)
@@ -70,7 +75,38 @@ extension AppDelegate: NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
+}
 
-
+extension AppDelegate: PhotoMatchDelegate {
+    func isMe(isMe: Bool) {
+        if isMe {
+            // auto login
+            // https://stackoverflow.com/questions/26650253/how-to-lock-unlock-screen-in-mac-programatically
+            // https://github.com/guoc/nearbt
+            // https://stackoverflow.com/questions/12247151/log-into-osx-via-the-command-line
+            print("auto login")
+            let sourcePath = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".macueqt", isDirectory: true).appendingPathComponent("loginSystem.sh")
+            let process = Process()
+            process.launchPath = "/bin/sh"
+            process.arguments = [sourcePath.path]
+            
+            process.launch()
+            process.waitUntilExit()
+        } else {
+//            self.tryLoginCount += 1
+//            if self.tryLoginCount < 2 {
+//                // retry 1 times
+//                self.photo?.start()
+//            } else {
+                // start screen saver
+//                print("start screen saver")
+//                let process = Process()
+//                process.launchPath = "/System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+//
+//                process.launch()
+//                process.waitUntilExit()
+//            }
+        }
+    }
 }
 

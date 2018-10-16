@@ -28,20 +28,26 @@ class PhotoHelper: NSObject {
     }()
     
     var sampleCounter = 0
-    let requiredSamples = 3
+    let requiredSamples = 1 // 需要采集的样本数
     var faceImages = [NSImage]()
 //    let stillImageOutput: AVCaptureStillImageOutput
     var isIdentifiyingPeople = false
     // https://github.com/Willjay90/AppleFaceDetection
     private var requests = [VNRequest]() // you can do multiple requests at the same time
     var faceDetectionReuqest: VNRequest!
+    var faceDir: URL?
     
     weak var delegate: PhotoUIDelegate?
+    weak var matchDelegate: PhotoMatchDelegate?
     
-    init(delegate: PhotoUIDelegate?) {
+    init(delegate: PhotoUIDelegate?, matchDelegate: PhotoMatchDelegate?) {
         self.delegate = delegate
+        self.matchDelegate = matchDelegate
 //        self.stillImageOutput = AVCaptureStillImageOutput()
         super.init()
+        
+        let desktopUrl = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
+        self.faceDir = desktopUrl.appendingPathComponent("face", isDirectory: true)
 //        self.session.sessionPreset = .photo
 //
 //        if self.session.canAddInput(input) {
@@ -111,10 +117,18 @@ class PhotoHelper: NSObject {
     }
     
     func start() {
+        try? FileManager.default.removeItem(at: self.faceDir!)
+        
         faceImages.removeAll()
         // https://github.com/opencv/opencv/issues/12763
         if !session.isRunning {
             session.startRunning()
+        }
+        // 5秒后关摄像头
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
+            self.stop()
+            print("after 5 seconds")
+            self.matchDelegate?.isMe(isMe: false)
         }
     }
     
@@ -141,8 +155,8 @@ class PhotoHelper: NSObject {
     }
     
     func dumpImage(image: NSImage, fileName: String) {
-        let desktopUrl = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
-        let destinationUrl = desktopUrl.appendingPathComponent("\(fileName).png")
+        try? FileManager.default.createDirectory(at: self.faceDir!, withIntermediateDirectories: true, attributes: nil)
+        let destinationUrl = faceDir!.appendingPathComponent("\(fileName).png")
         if image.pngWrite(to: destinationUrl) {
             print("\(fileName) saved")
         }
@@ -193,7 +207,7 @@ extension PhotoHelper: AVCaptureVideoDataOutputSampleBufferDelegate {
 //                return
 //            }
             sampleCounter += 1
-            let tickSample = 1
+            let tickSample = 2
             // grab a sample every tickSample samples
             if sampleCounter % tickSample == 0 {
                 let nsImage = croppedImage.nsImage
@@ -208,6 +222,7 @@ extension PhotoHelper: AVCaptureVideoDataOutputSampleBufferDelegate {
                         self.delegate?.faceIdentified(faces: self.faceImages)
                     }
                     stop()
+                    self.comparePhoto()
                 }
             }
             DispatchQueue.main.async {
@@ -215,6 +230,47 @@ extension PhotoHelper: AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         }
     }
+    
+    func comparePhoto() {
+        // https://github.com/ageitgey/face_recognition
+        let sourcePath = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".macueqt", isDirectory: true).appendingPathComponent("face_known", isDirectory: true)
+        print(sourcePath.path)
+        let desktopURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
+        let targetPath = desktopURL.appendingPathComponent("face", isDirectory: true)
+        print(targetPath.path)
+        let process = Process()
+        process.launchPath = "/usr/local/bin/face_recognition"
+        process.arguments = ["--show-distance", "true", sourcePath.path, targetPath.path]
+        var environment = ProcessInfo.processInfo.environment
+        environment["LC_ALL"] = "zh_CN.UTF-8"
+        environment["LANG"] = "zh_CN.UTF-8"
+        process.environment = environment
+        
+        let pipe = Pipe()
+        process.standardOutput = pipe
+        
+        process.launch()
+        process.waitUntilExit()
+        
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output: String = String(data: data, encoding: .utf8)!
+        
+        let strings = output.components(separatedBy: ",")
+        if strings.count == 3 {
+            if strings[1] == "ueqt" {
+                print("it's me!")
+                self.matchDelegate?.isMe(isMe: true)
+            } else {
+                print("it's not me!")
+                self.matchDelegate?.isMe(isMe: false)
+            }
+            print("confidence: \(strings[2])")
+        }
+    }
+}
+
+protocol PhotoMatchDelegate: class {
+    func isMe(isMe: Bool)
 }
 
 protocol PhotoUIDelegate: class {

@@ -25,6 +25,11 @@ class MainViewController: NSViewController {
         // start at login
         self.startAtLoginCheckMenu.state = UserDefaults.standard.bool(forKey: "startAtLogin") ? .on : .off
     }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        // 菜单跳转后关闭菜单
+        self.statusBarView!.closeMainPopover(sender: sender)
+    }
 }
 
 extension MainViewController {

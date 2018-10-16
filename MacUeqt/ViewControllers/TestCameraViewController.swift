@@ -22,7 +22,7 @@ class TestCameraViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.photo = PhotoHelper(delegate: self)
+        self.photo = PhotoHelper(delegate: self, matchDelegate: nil)
     }
 }
 
