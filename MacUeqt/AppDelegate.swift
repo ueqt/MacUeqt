@@ -100,13 +100,14 @@ extension AppDelegate: PhotoMatchDelegate {
 //            } else {
                 // put display to sleep
             // https://stackoverflow.com/questions/7701735/putting-the-display-to-sleep-shiftcontroleject-in-applescript
-                print("put display to sleep")
-                let process = Process()
-                process.launchPath = "/usr/bin/pmset"
-                process.arguments = ["displaysleepnow"]
-
-                process.launch()
-                process.waitUntilExit()
+            // 不要sleep，否则没解锁开会反复进入sleep状态
+//                print("put display to sleep")
+//                let process = Process()
+//                process.launchPath = "/usr/bin/pmset"
+//                process.arguments = ["displaysleepnow"]
+//
+//                process.launch()
+//                process.waitUntilExit()
 //           }
         }
     }
