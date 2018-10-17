@@ -12,6 +12,10 @@ Ueqt's Mac Assistant
 
 [x] Open Finder current path in iTerm from `Main Icon Menu` -> `Finder` -> `iTerm`
 
+### New File Creation
+
+[x] Create new file at Finder current path from `Main Icon Menu`->`Finder`->`New File`
+
 ### Unlox
 
 [x] Capture Photos at screen wake up and face detection then face recognition then auto login

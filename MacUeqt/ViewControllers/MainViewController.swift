@@ -44,6 +44,12 @@ extension MainViewController {
         self.statusBarView!.closeMainPopover(sender: sender)
     }
     
+    @IBAction func doFinderNewFile(_ sender: Any) {
+        let newFile = NewFile()
+        newFile.run()
+        self.statusBarView?.closeMainPopover(sender: sender)
+    }
+    
     @IBAction func toggleStartAtLogin(_ sender: NSMenuItem) {
         let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
         let isAuto = sender.state == .on

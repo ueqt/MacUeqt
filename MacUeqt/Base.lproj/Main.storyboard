@@ -84,22 +84,45 @@
                                     <rect key="frame" x="3" y="3" width="201" height="96"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-Qi-Nbk">
-                                            <rect key="frame" x="4" y="63" width="74" height="32"/>
-                                            <buttonCell key="cell" type="push" title="iTerm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hj8-M8-Y4V">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="doFinderIterm:" target="OzH-Go-eMn" id="9M4-1s-Ek5"/>
-                                            </connections>
-                                        </button>
+                                        <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="14" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4F-rV-ol2">
+                                            <rect key="frame" x="20" y="50" width="156" height="21"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-Qi-Nbk">
+                                                    <rect key="frame" x="-6" y="-7" width="74" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="iTerm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hj8-M8-Y4V">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="doFinderIterm:" target="OzH-Go-eMn" id="9M4-1s-Ek5"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1aL-jM-gCd">
+                                                    <rect key="frame" x="70" y="-7" width="92" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="New File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QgH-eW-gf3">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="doFinderNewFile:" target="OzH-Go-eMn" id="KhN-gn-Chp"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fRC-Qi-Nbk" secondAttribute="bottom" constant="70" id="11W-29-3aw"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fRC-Qi-Nbk" secondAttribute="trailing" constant="20" symbolic="YES" id="RTO-GN-dPB"/>
-                                        <constraint firstItem="fRC-Qi-Nbk" firstAttribute="top" secondItem="aK6-4s-ht0" secondAttribute="top" constant="10" id="lMI-HP-MDH"/>
-                                        <constraint firstItem="fRC-Qi-Nbk" firstAttribute="leading" secondItem="aK6-4s-ht0" secondAttribute="leading" constant="10" id="uXt-xs-9gC"/>
+                                        <constraint firstItem="n4F-rV-ol2" firstAttribute="top" secondItem="aK6-4s-ht0" secondAttribute="top" constant="20" id="4FY-d1-8c3"/>
+                                        <constraint firstItem="n4F-rV-ol2" firstAttribute="leading" secondItem="aK6-4s-ht0" secondAttribute="leading" constant="20" id="cDa-We-LLQ"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="n4F-rV-ol2" secondAttribute="bottom" constant="50" id="eWr-j1-Rkf"/>
+                                        <constraint firstAttribute="trailing" secondItem="n4F-rV-ol2" secondAttribute="trailing" constant="20" id="tcf-qh-R8o"/>
                                     </constraints>
                                 </view>
                             </box>
@@ -230,7 +253,7 @@
                                 <rect key="frame" x="0.0" y="20" width="564" height="20"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bS2-IR-Pac">
-                                        <rect key="frame" x="128" y="-6" width="89" height="30"/>
+                                        <rect key="frame" x="14" y="-6" width="89" height="30"/>
                                         <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fet-gA-JW5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -240,7 +263,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lue-x6-MLe">
-                                        <rect key="frame" x="239" y="-7" width="89" height="32"/>
+                                        <rect key="frame" x="125" y="-7" width="89" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Avm-Dx-kWq"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="mIg-vc-xFe"/>
@@ -254,7 +277,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yrd-OC-qYh">
-                                        <rect key="frame" x="350" y="-7" width="89" height="32"/>
+                                        <rect key="frame" x="236" y="-7" width="89" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="scg-Fe-axx"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="xyc-fQ-Hyy"/>
@@ -268,7 +291,7 @@
                                         </connections>
                                     </button>
                                     <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4qS-xP-mxS">
-                                        <rect key="frame" x="461" y="-7" width="89" height="32"/>
+                                        <rect key="frame" x="347" y="-7" width="89" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="Oa0-kK-QzE"/>
                                             <constraint firstAttribute="height" constant="21" id="axc-dA-Nda"/>
