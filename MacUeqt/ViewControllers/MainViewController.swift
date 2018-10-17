@@ -11,7 +11,7 @@ import ServiceManagement
 
 class MainViewController: NSViewController {
     var statusBarView: StatusBarViewController? = nil
-
+    
     @IBOutlet weak var finderItermButton: NSButton!
     @IBOutlet weak var popupButton: NSButton!
     @IBOutlet var popupMenu: NSMenu!
@@ -52,12 +52,12 @@ extension MainViewController {
     
     @IBAction func toggleStartAtLogin(_ sender: NSMenuItem) {
         let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
-        let isAuto = sender.state == .on
+        let isAuto = !(sender.state == .on)
         if !SMLoginItemSetEnabled(startAtLoginAppIdentifer as CFString, isAuto) {
             NSLog("set login item failed")
-            self.startAtLoginCheckMenu.state = isAuto ? .off : .on
         } else {
             UserDefaults.standard.set(isAuto, forKey: "startAtLogin")
+            self.startAtLoginCheckMenu.state = isAuto ? .on : .off
         }
     }
 }

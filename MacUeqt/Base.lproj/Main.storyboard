@@ -178,6 +178,9 @@
                                 <items>
                                     <menuItem title="登录后启动" id="m8p-VH-Bv8">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="toggleStartAtLogin:" target="OzH-Go-eMn" id="EcA-eT-tIT"/>
+                                        </connections>
                                     </menuItem>
                                 </items>
                             </menu>
