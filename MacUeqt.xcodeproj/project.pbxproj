@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		90124C3A217055C70036445D /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90124C39217055C70036445D /* StatusBarViewController.swift */; };
 		90124C40217082F80036445D /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90124C3F217082F80036445D /* NSDateExtensions.swift */; };
 		90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90197F96216A2A6F0079C027 /* MainViewController.swift */; };
 		903D8338216B8462005BB285 /* StartAtLoginAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D8337216B8462005BB285 /* StartAtLoginAppDelegate.swift */; };
@@ -21,6 +20,12 @@
 		9053E5612173335200DFCA3A /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E5602173335200DFCA3A /* PhotoHelper.swift */; };
 		9053E5632173736F00DFCA3A /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E5622173736F00DFCA3A /* VideoPreviewView.swift */; };
 		9053E565217373EE00DFCA3A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9053E564217373EE00DFCA3A /* AVFoundation.framework */; };
+		9079DAA921786DD8000AE30E /* StatusItemMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAA821786DD8000AE30E /* StatusItemMain.swift */; };
+		9079DAAB21786FFF000AE30E /* StatusItemTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAAA21786FFF000AE30E /* StatusItemTime.swift */; };
+		9079DAAD217871E6000AE30E /* StatusItemPopupBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAAC217871E6000AE30E /* StatusItemPopupBase.swift */; };
+		9079DAAF21787DE1000AE30E /* StatusItemNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAAE21787DE1000AE30E /* StatusItemNetwork.swift */; };
+		9079DAB1217886F2000AE30E /* StatusItemBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAB0217886F2000AE30E /* StatusItemBattery.swift */; };
+		9079DAB321788766000AE30E /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAB221788766000AE30E /* Battery.swift */; };
 		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
 		90B54F762175C6DE007029D2 /* loginSystem.sh in Resources */ = {isa = PBXBuildFile; fileRef = 90B54F752175C6DE007029D2 /* loginSystem.sh */; };
 		90C9D7862176C67D008DBEF9 /* NewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9D7852176C67D008DBEF9 /* NewFile.swift */; };
@@ -74,7 +79,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		90124C39217055C70036445D /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
 		90124C3F217082F80036445D /* NSDateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		90197F96216A2A6F0079C027 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		903D8335216B8462005BB285 /* MacUeqtStartAtLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUeqtStartAtLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +94,12 @@
 		9053E5602173335200DFCA3A /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		9053E5622173736F00DFCA3A /* VideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
 		9053E564217373EE00DFCA3A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9079DAA821786DD8000AE30E /* StatusItemMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemMain.swift; sourceTree = "<group>"; };
+		9079DAAA21786FFF000AE30E /* StatusItemTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemTime.swift; sourceTree = "<group>"; };
+		9079DAAC217871E6000AE30E /* StatusItemPopupBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemPopupBase.swift; sourceTree = "<group>"; };
+		9079DAAE21787DE1000AE30E /* StatusItemNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemNetwork.swift; sourceTree = "<group>"; };
+		9079DAB0217886F2000AE30E /* StatusItemBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemBattery.swift; sourceTree = "<group>"; };
+		9079DAB221788766000AE30E /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 		9087D3FA216B51C400793503 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		90B54F752175C6DE007029D2 /* loginSystem.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = loginSystem.sh; sourceTree = "<group>"; };
 		90C9D7852176C67D008DBEF9 /* NewFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFile.swift; sourceTree = "<group>"; };
@@ -150,7 +160,6 @@
 			children = (
 				90E1A4592174270700C35736 /* TestCameraViewController.swift */,
 				90F0F69A2160AB81007C83D1 /* SettingViewController.swift */,
-				90124C39217055C70036445D /* StatusBarViewController.swift */,
 				90197F96216A2A6F0079C027 /* MainViewController.swift */,
 				9053E55E217331D100DFCA3A /* ImageCaptureViewController.swift */,
 			);
@@ -162,6 +171,7 @@
 			children = (
 				90124C3F217082F80036445D /* NSDateExtensions.swift */,
 				9053E5602173335200DFCA3A /* PhotoHelper.swift */,
+				9079DAB221788766000AE30E /* Battery.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -184,6 +194,18 @@
 				9053E5622173736F00DFCA3A /* VideoPreviewView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9079DAA721786DC1000AE30E /* StatusItems */ = {
+			isa = PBXGroup;
+			children = (
+				9079DAA821786DD8000AE30E /* StatusItemMain.swift */,
+				9079DAAA21786FFF000AE30E /* StatusItemTime.swift */,
+				9079DAAC217871E6000AE30E /* StatusItemPopupBase.swift */,
+				9079DAAE21787DE1000AE30E /* StatusItemNetwork.swift */,
+				9079DAB0217886F2000AE30E /* StatusItemBattery.swift */,
+			);
+			path = StatusItems;
 			sourceTree = "<group>";
 		};
 		9087D3F9216B51C400793503 /* Frameworks */ = {
@@ -242,6 +264,7 @@
 		90F0F6972160AB81007C83D1 /* MacUeqt */ = {
 			isa = PBXGroup;
 			children = (
+				9079DAA721786DC1000AE30E /* StatusItems */,
 				9053E566217374D800DFCA3A /* Views */,
 				90124C3C21707F700036445D /* Utility */,
 				90124C3B217057990036445D /* ViewControllers */,
@@ -466,12 +489,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90124C3A217055C70036445D /* StatusBarViewController.swift in Sources */,
+				9079DAA921786DD8000AE30E /* StatusItemMain.swift in Sources */,
 				90F0F69B2160AB81007C83D1 /* SettingViewController.swift in Sources */,
+				9079DAAF21787DE1000AE30E /* StatusItemNetwork.swift in Sources */,
 				90124C40217082F80036445D /* NSDateExtensions.swift in Sources */,
+				9079DAAB21786FFF000AE30E /* StatusItemTime.swift in Sources */,
+				9079DAB321788766000AE30E /* Battery.swift in Sources */,
+				9079DAB1217886F2000AE30E /* StatusItemBattery.swift in Sources */,
 				9053E5632173736F00DFCA3A /* VideoPreviewView.swift in Sources */,
 				90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */,
 				9053E55F217331D100DFCA3A /* ImageCaptureViewController.swift in Sources */,
+				9079DAAD217871E6000AE30E /* StatusItemPopupBase.swift in Sources */,
 				9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */,
 				9053E5612173335200DFCA3A /* PhotoHelper.swift in Sources */,
 				90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */,

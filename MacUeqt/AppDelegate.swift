@@ -14,13 +14,23 @@ extension Notification.Name {
 
 @NSApplicationMain
 class AppDelegate: NSObject {
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-//    var tryLoginCount = 0
+    // 主菜单按钮
+    static let statusItemMainView = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    static let statusItemMain = StatusItemMain()
+    // 时间
+    static let statusItemTimeView = NSStatusBar.system.statusItem(withLength: 62.0)
+    static let statusItemTime = StatusItemTime()
+    // 网络
+    static let statusItemNetworkView = NSStatusBar.system.statusItem(withLength: 62.0)
+    static let statusItemNetwork = StatusItemNetwork()
+    // 电池
+    static let statusItemBatteryView = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    static let statusItemBattery = StatusItemBattery()
+    
     var photo: PhotoHelper? = nil
     
     override init() {
-        self.statusItem.length = 120
-        
+//        self.statusItem.length = 120
         super.init()
     }
 }
@@ -29,7 +39,11 @@ extension AppDelegate: NSApplicationDelegate {
     
     // https://www.raywenderlich.com/450-menus-and-popovers-in-menu-bar-apps-for-macos
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.statusItem.button?.addSubview(StatusBarViewController.freshController().view)
+//        AppDelegate.statusItemMainIcon.button?.addSubview(StatusBarViewController.freshController().view)
+        AppDelegate.statusItemMain.show()
+        AppDelegate.statusItemTime.show()
+        AppDelegate.statusItemNetwork.show()
+        AppDelegate.statusItemBattery.show()
         
         // start at login
         let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"

@@ -10,7 +10,6 @@ import Cocoa
 import ServiceManagement
 
 class MainViewController: NSViewController {
-    var statusBarView: StatusBarViewController? = nil
     
     @IBOutlet weak var finderItermButton: NSButton!
     @IBOutlet weak var popupButton: NSButton!
@@ -28,7 +27,7 @@ class MainViewController: NSViewController {
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         // 菜单跳转后关闭菜单
-        self.statusBarView!.closeMainPopover(sender: sender)
+        AppDelegate.statusItemMain.closePopover(sender: sender)
     }
 }
 
@@ -41,13 +40,13 @@ extension MainViewController {
     @IBAction func doFinderIterm(_ sender: Any) {
         let openIterm = OpenIterm()
         openIterm.run()
-        self.statusBarView!.closeMainPopover(sender: sender)
+        AppDelegate.statusItemMain.closePopover(sender: sender)
     }
     
     @IBAction func doFinderNewFile(_ sender: Any) {
         let newFile = NewFile()
         newFile.run()
-        self.statusBarView?.closeMainPopover(sender: sender)
+        AppDelegate.statusItemMain.closePopover(sender: sender)
     }
     
     @IBAction func toggleStartAtLogin(_ sender: NSMenuItem) {
@@ -64,7 +63,7 @@ extension MainViewController {
 
 extension MainViewController {
     // MARK: Storyboard instantiation
-    static func freshController(statusBarView: StatusBarViewController) -> MainViewController {
+    static func freshController() -> MainViewController {
         // 1. Get a reference to Main.storyboard
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         // 2. Create a Scene identifier that matches the one set on ui
@@ -73,7 +72,6 @@ extension MainViewController {
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? MainViewController else {
             fatalError("Why cant i find MainViewController? - Check Main.storyboard")
         }
-        viewcontroller.statusBarView = statusBarView
         return viewcontroller
     }
 }
