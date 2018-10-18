@@ -21,12 +21,21 @@ Ueqt's Mac Assistant
 [x] Capture Photos at screen wake up and face detection then face recognition then auto login
 
 ### TinyCal(小历)
+
 [ ] Calendar
 
 ### 腾讯电脑管家 
-[ ] Cpu usage
-[ ] Memory usage
-[ ] Network usage
+
+[x] Network usage
+
+### system battery
+
+[x] Battery usage -- 因为感觉系统的性能会更好，所以暂时注释了
+
+### Bartendar
+
+[ ] Status bar control
+
 
 ## Other Feature
 

@@ -24,9 +24,9 @@ class AppDelegate: NSObject {
     static let statusItemNetworkView = NSStatusBar.system.statusItem(withLength: 62.0)
     static let statusItemNetwork = StatusItemNetwork()
     // 电池
-    static let statusItemBatteryView = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    static let statusItemBattery = StatusItemBattery()
-    
+//    static let statusItemBatteryView = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+//    static let statusItemBattery = StatusItemBattery()
+   
     var photo: PhotoHelper? = nil
     
     override init() {
@@ -43,7 +43,7 @@ extension AppDelegate: NSApplicationDelegate {
         AppDelegate.statusItemMain.show()
         AppDelegate.statusItemTime.show()
         AppDelegate.statusItemNetwork.show()
-        AppDelegate.statusItemBattery.show()
+//        AppDelegate.statusItemBattery.show()
         
         // start at login
         let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"
