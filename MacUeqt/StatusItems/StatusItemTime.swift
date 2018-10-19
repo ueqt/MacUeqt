@@ -9,16 +9,20 @@
 import Foundation
 import Cocoa
 
-class StatusItemTime {
-    func show() {
+class StatusItemTime: StatusItemPopupBase {
+    override func show() {
+        self.statusItem = AppDelegate.statusItemTimeView
+        super.show()
         // update time
         if let button = AppDelegate.statusItemTimeView.button {
-            let date = NSDate()
+            let date = Date()
             button.title = date.time()
-            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) {_ in
-                let date = NSDate()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
+                let date = Date()
                 button.title = date.time()
             }
         }
+        
+        self.popover.contentViewController = TimeViewController.freshController()
     }
 }

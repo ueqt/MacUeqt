@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		90124C40217082F80036445D /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90124C3F217082F80036445D /* NSDateExtensions.swift */; };
+		90124C40217082F80036445D /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90124C3F217082F80036445D /* DateExtensions.swift */; };
 		90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90197F96216A2A6F0079C027 /* MainViewController.swift */; };
 		903D8338216B8462005BB285 /* StartAtLoginAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D8337216B8462005BB285 /* StartAtLoginAppDelegate.swift */; };
 		903D833C216B8463005BB285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903D833B216B8463005BB285 /* Assets.xcassets */; };
 		903D833F216B8463005BB285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903D833D216B8463005BB285 /* Main.storyboard */; };
 		903D8345216B864C005BB285 /* MacUeqtStartAtLogin.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 903D8335216B8462005BB285 /* MacUeqtStartAtLogin.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9045A535217977E4002140D3 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045A534217977E4002140D3 /* TimeViewController.swift */; };
+		9045A5392179794E002140D3 /* CalendarDayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045A5372179794E002140D3 /* CalendarDayItem.swift */; };
+		9045A53A2179794E002140D3 /* CalendarDayItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9045A5382179794E002140D3 /* CalendarDayItem.xib */; };
 		904D50CF21663E9200ABC9C9 /* openIterm.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 904D50CE21663E9200ABC9C9 /* openIterm.scpt */; };
 		9051A78F21663567003D01A6 /* OpenIterm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051A78E21663567003D01A6 /* OpenIterm.swift */; };
 		9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 9051A7902166368E003D01A6 /* finderCurrentPath.scpt */; };
@@ -79,7 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		90124C3F217082F80036445D /* NSDateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		90124C3F217082F80036445D /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		90197F96216A2A6F0079C027 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		903D8335216B8462005BB285 /* MacUeqtStartAtLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUeqtStartAtLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903D8337216B8462005BB285 /* StartAtLoginAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAtLoginAppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +90,9 @@
 		903D833E216B8463005BB285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		903D8340216B8463005BB285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		903D8341216B8463005BB285 /* MacUeqtStartAtLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacUeqtStartAtLogin.entitlements; sourceTree = "<group>"; };
+		9045A534217977E4002140D3 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		9045A5372179794E002140D3 /* CalendarDayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayItem.swift; sourceTree = "<group>"; };
+		9045A5382179794E002140D3 /* CalendarDayItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDayItem.xib; sourceTree = "<group>"; };
 		904D50CE21663E9200ABC9C9 /* openIterm.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = openIterm.scpt; sourceTree = "<group>"; };
 		9051A78E21663567003D01A6 /* OpenIterm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenIterm.swift; sourceTree = "<group>"; };
 		9051A7902166368E003D01A6 /* finderCurrentPath.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = finderCurrentPath.scpt; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 				90F0F69A2160AB81007C83D1 /* SettingViewController.swift */,
 				90197F96216A2A6F0079C027 /* MainViewController.swift */,
 				9053E55E217331D100DFCA3A /* ImageCaptureViewController.swift */,
+				9045A534217977E4002140D3 /* TimeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,7 +176,7 @@
 		90124C3C21707F700036445D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				90124C3F217082F80036445D /* NSDateExtensions.swift */,
+				90124C3F217082F80036445D /* DateExtensions.swift */,
 				9053E5602173335200DFCA3A /* PhotoHelper.swift */,
 				9079DAB221788766000AE30E /* Battery.swift */,
 			);
@@ -186,6 +193,15 @@
 				903D8341216B8463005BB285 /* MacUeqtStartAtLogin.entitlements */,
 			);
 			path = MacUeqtStartAtLogin;
+			sourceTree = "<group>";
+		};
+		9045A53621797871002140D3 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				9045A5372179794E002140D3 /* CalendarDayItem.swift */,
+				9045A5382179794E002140D3 /* CalendarDayItem.xib */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 		9053E566217374D800DFCA3A /* Views */ = {
@@ -264,6 +280,7 @@
 		90F0F6972160AB81007C83D1 /* MacUeqt */ = {
 			isa = PBXGroup;
 			children = (
+				9045A53621797871002140D3 /* Controls */,
 				9079DAA721786DC1000AE30E /* StatusItems */,
 				9053E566217374D800DFCA3A /* Views */,
 				90124C3C21707F700036445D /* Utility */,
@@ -456,6 +473,7 @@
 				904D50CF21663E9200ABC9C9 /* openIterm.scpt in Resources */,
 				9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */,
 				90F0F6A02160AB83007C83D1 /* Main.storyboard in Resources */,
+				9045A53A2179794E002140D3 /* CalendarDayItem.xib in Resources */,
 				90B54F762175C6DE007029D2 /* loginSystem.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,8 +509,9 @@
 			files = (
 				9079DAA921786DD8000AE30E /* StatusItemMain.swift in Sources */,
 				90F0F69B2160AB81007C83D1 /* SettingViewController.swift in Sources */,
+				9045A5392179794E002140D3 /* CalendarDayItem.swift in Sources */,
 				9079DAAF21787DE1000AE30E /* StatusItemNetwork.swift in Sources */,
-				90124C40217082F80036445D /* NSDateExtensions.swift in Sources */,
+				90124C40217082F80036445D /* DateExtensions.swift in Sources */,
 				9079DAAB21786FFF000AE30E /* StatusItemTime.swift in Sources */,
 				9079DAB321788766000AE30E /* Battery.swift in Sources */,
 				9079DAB1217886F2000AE30E /* StatusItemBattery.swift in Sources */,
@@ -504,6 +523,7 @@
 				9053E5612173335200DFCA3A /* PhotoHelper.swift in Sources */,
 				90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */,
 				90E1A45A2174270700C35736 /* TestCameraViewController.swift in Sources */,
+				9045A535217977E4002140D3 /* TimeViewController.swift in Sources */,
 				90C9D7862176C67D008DBEF9 /* NewFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

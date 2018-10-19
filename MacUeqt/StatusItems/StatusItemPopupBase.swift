@@ -13,6 +13,13 @@ class StatusItemPopupBase {
     let popover = NSPopover()
     var statusItem: NSStatusItem? = nil
     
+    func show() {
+        if let button = statusItem?.button {
+            button.target = self // must have to popup
+            button.action = #selector(togglePopover)
+        }
+    }
+    
     @IBAction func togglePopover(_ sender: Any?) {
         if popover.isShown {
             closePopover(sender: sender)

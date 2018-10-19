@@ -23,7 +23,7 @@ struct NewFile {
         guard let path = finderCurrentPath() else {
             return
         }
-        let currentTime = NSDate().time()
+        let currentTime = Date().time()
         
         let process = Process()
         process.launchPath = "/usr/bin/touch"
