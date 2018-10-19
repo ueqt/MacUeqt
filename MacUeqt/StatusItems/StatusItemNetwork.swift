@@ -85,6 +85,18 @@ class StatusItemNetwork {
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
             self.updateUI()
         }
+        
+        if let button = AppDelegate.statusItemNetworkView.button {
+            button.target = self
+            button.action = #selector(showActivityMonitor)
+        }
+    }
+    
+    @IBAction func showActivityMonitor(_ sender: Any?) {
+        let activityMonitor = Process()
+        activityMonitor.launchPath = "/usr/bin/open"
+        activityMonitor.arguments = ["-a", "Activity Monitor"]
+        activityMonitor.launch()
     }
     
     func updateUI() {
