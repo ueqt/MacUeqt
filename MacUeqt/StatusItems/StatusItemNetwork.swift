@@ -83,88 +83,92 @@ class StatusItemNetwork {
         netstat.launch()
         
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
-            var needUpdate = false
+            self.updateUI()
+        }
+    }
+    
+    func updateUI() {
+        var needUpdate = false
+        
+        if (self.dSpeed != self.dSpeedLast)
+        {
+            needUpdate = true
+        }
+        
+        if (self.uSpeed != self.uSpeedLast)
+        {
+            needUpdate = true
+        }
+        
+        if (needUpdate)
+        {
+            self.updateBandText(down: self.dSpeed!, up: self.uSpeed!)
+            self.dSpeedLast = self.dSpeed
+            self.uSpeedLast = self.uSpeed
             
-            if (self.dSpeed != self.dSpeedLast)
+            self.bandwidthDUsageArray[self.bandwidthDUsageArrayIndex] = self.dSpeedLast!
+            self.bandwidthDUsageArrayIndex += 1
+            
+            if (self.bandwidthDUsageArrayIndex == self.bandwidthDUsageArray.count - 1)
             {
-                needUpdate = true
+                self.bandwidthDUsageArrayIndex = 0
             }
             
-            if (self.uSpeed != self.uSpeedLast)
+            self.bandwidthUUsageArray[self.bandwidthUUsageArrayIndex] = self.uSpeedLast!
+            self.bandwidthUUsageArrayIndex += 1
+            
+            if (self.bandwidthUUsageArrayIndex == self.bandwidthUUsageArray.count)
             {
-                needUpdate = true
+                self.bandwidthUUsageArrayIndex = 0
             }
             
-            if (needUpdate)
-            {
-                self.updateBandText(down: self.dSpeed!, up: self.uSpeed!)
-                self.dSpeedLast = self.dSpeed
-                self.uSpeedLast = self.uSpeed
-                
-                self.bandwidthDUsageArray[self.bandwidthDUsageArrayIndex] = self.dSpeedLast!
-                self.bandwidthDUsageArrayIndex += 1
-                
-                if (self.bandwidthDUsageArrayIndex == self.bandwidthDUsageArray.count - 1)
-                {
-                    self.bandwidthDUsageArrayIndex = 0
-                }
-                
-                self.bandwidthUUsageArray[self.bandwidthUUsageArrayIndex] = self.uSpeedLast!
-                self.bandwidthUUsageArrayIndex += 1
-                
-                if (self.bandwidthUUsageArrayIndex == self.bandwidthUUsageArray.count)
-                {
-                    self.bandwidthUUsageArrayIndex = 0
-                }
-                
-                self.updateBandwidthMenuText(down: self.getDBandwidthUsage(), up: self.getUBandwidthUsage())
-//                self.getDBandwidthUsage()
-//                self.getUBandwidthUsage()
-            }
-            
-//            if (InterfaceStyle() == InterfaceStyle.Dark)
-//            {
-//                self.bandIMG = "bandwidth-white"
-//                self.bandColor = NSColor.white
-//            }
-//            else
-//            {
-                self.bandIMG = "bandwidth-black"
-                self.bandColor = NSColor.black
-//            }
-            
-            let imgFinal = NSImage(size: NSSize(width: 60, height: 18))
-            imgFinal.lockFocus()
-            let img1 = NSImage(named:NSImage.Name(self.bandIMG!))
-            
-            img1?.draw(at: NSPoint(x: 2, y: 3), from: NSZeroRect, operation: NSCompositingOperation.sourceOver, fraction: 1.0)
-            
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = 0.00000001
-            
-            self.dLength = (self.finalDown?.count)!
-            self.uLength = (self.finalUp?.count)!
-            
-            let font = NSFont(name: "Apple SD Gothic Neo Bold", size: 11.0)
-            let fontSmall = NSFont(name: "Apple SD Gothic Neo Bold", size: 8.0)
-            let attrString = NSMutableAttributedString(string: self.finalDown ?? "0 KB/s")
-            attrString.addAttribute(.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
-            attrString.addAttribute(.font, value: font as Any, range:NSMakeRange(0, attrString.length - 4))
-            attrString.addAttribute(.font, value: fontSmall as Any, range:NSMakeRange(attrString.length - 4, 4))
-            attrString.addAttribute(.foregroundColor, value: self.bandColor ?? NSColor.white, range:NSMakeRange(0, attrString.length))
-            attrString.draw(at: NSPoint(x:16, y:6))
-            
-            let attrString2 = NSMutableAttributedString(string: self.finalUp ?? "0 KB/s")
-            attrString2.addAttribute(.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString2.length))
-            attrString2.addAttribute(.font, value: font as Any, range:NSMakeRange(0, attrString2.length - 4))
-            attrString2.addAttribute(.font, value: fontSmall as Any, range:NSMakeRange(attrString2.length - 4, 4))
-            attrString2.addAttribute(.foregroundColor, value: self.bandColor ?? NSColor.white, range:NSMakeRange(0, attrString2.length))
-            attrString2.draw(at: NSPoint(x:16, y:-4))
-            imgFinal.unlockFocus()
-            if let button = AppDelegate.statusItemNetworkView.button {
-                imgFinal.isTemplate = true
-                button.image = imgFinal
-            }
+            self.updateBandwidthMenuText(down: self.getDBandwidthUsage(), up: self.getUBandwidthUsage())
+            //                self.getDBandwidthUsage()
+            //                self.getUBandwidthUsage()
+        }
+        
+        //            if (InterfaceStyle() == InterfaceStyle.Dark)
+        //            {
+        //                self.bandIMG = "bandwidth-white"
+        //                self.bandColor = NSColor.white
+        //            }
+        //            else
+        //            {
+        self.bandIMG = "bandwidth-black"
+        self.bandColor = NSColor.black
+        //            }
+        
+        let imgFinal = NSImage(size: NSSize(width: 60, height: 18))
+        imgFinal.lockFocus()
+        let img1 = NSImage(named:NSImage.Name(self.bandIMG!))
+        
+        img1?.draw(at: NSPoint(x: 2, y: 3), from: NSZeroRect, operation: NSCompositingOperation.sourceOver, fraction: 1.0)
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 0.00000001
+        
+        self.dLength = (self.finalDown?.count)!
+        self.uLength = (self.finalUp?.count)!
+        
+        let font = NSFont(name: "Apple SD Gothic Neo Bold", size: 11.0)
+        let fontSmall = NSFont(name: "Apple SD Gothic Neo Bold", size: 8.0)
+        let attrString = NSMutableAttributedString(string: self.finalDown ?? "0 KB/s")
+        attrString.addAttribute(.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        attrString.addAttribute(.font, value: font as Any, range:NSMakeRange(0, attrString.length - 4))
+        attrString.addAttribute(.font, value: fontSmall as Any, range:NSMakeRange(attrString.length - 4, 4))
+        attrString.addAttribute(.foregroundColor, value: self.bandColor ?? NSColor.white, range:NSMakeRange(0, attrString.length))
+        attrString.draw(at: NSPoint(x:16, y:-3))
+        
+        let attrString2 = NSMutableAttributedString(string: self.finalUp ?? "0 KB/s")
+        attrString2.addAttribute(.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString2.length))
+        attrString2.addAttribute(.font, value: font as Any, range:NSMakeRange(0, attrString2.length - 4))
+        attrString2.addAttribute(.font, value: fontSmall as Any, range:NSMakeRange(attrString2.length - 4, 4))
+        attrString2.addAttribute(.foregroundColor, value: self.bandColor ?? NSColor.white, range:NSMakeRange(0, attrString2.length))
+        attrString2.draw(at: NSPoint(x:16, y:7))
+        imgFinal.unlockFocus()
+        if let button = AppDelegate.statusItemNetworkView.button {
+            imgFinal.isTemplate = true
+            button.image = imgFinal
         }
     }
     
