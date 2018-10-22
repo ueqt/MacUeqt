@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import EventKit
 
 struct Day {
     var isNumber = false
@@ -31,6 +32,7 @@ class TimeViewController: NSViewController {
     var currentMonth: Date? = nil
     var lastFirstWeekdayLastMonth: Date? = nil
     
+    @IBOutlet weak var buttonToday: NSButton!
     @IBOutlet weak var buttonLeft: NSButton!
     @IBOutlet weak var buttonRight: NSButton!
     @IBOutlet weak var inputYear: NSTextField!
@@ -39,7 +41,7 @@ class TimeViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         weekdays = ["日", "一", "二", "三", "四", "五", "六"] // calendar.veryShortWeekdaySymbols
         daysInWeek = weekdays.count
         
@@ -58,6 +60,7 @@ class TimeViewController: NSViewController {
         updateCurrentlyShownDays()
 
         updateCalendar()
+
     }
     @IBAction func leftClicked(_ sender: Any) {
         self.decrementMonth()
@@ -70,11 +73,11 @@ class TimeViewController: NSViewController {
     }
     @IBAction func yearChanged(_ sender: NSTextField) {
         recalcMonth()
-        sender.window?.makeFirstResponder(self.buttonLeft)
+        sender.window?.makeFirstResponder(self.buttonToday)
     }
     @IBAction func monthChanged(_ sender: NSTextField) {
         recalcMonth()
-        sender.window?.makeFirstResponder(self.buttonLeft)
+        sender.window?.makeFirstResponder(self.buttonToday)
     }
     
     func updateCalendar() {
@@ -196,7 +199,19 @@ extension TimeViewController {
             let weekOfYear = Calendar.current.component(.weekOfYear, from: date)
             let (lunarMonth, lunarDay) = date.convertGregorianToLunar()
             day.lunarText = lunarDay == "初一" ? lunarMonth : lunarDay
-            day.tooltip = "\(date.month())月\(date.day())日\(daysBeforeInfo) 第\(weekOfYear)周\n\(lunarMonth)\(lunarDay)"
+            let constellationHoliday = date.holidayConstellation()
+            if constellationHoliday != nil {
+                day.lunarText = constellationHoliday!
+            }
+            let solarTermHoliday = date.holidaySolarTerm()
+            if solarTermHoliday != nil {
+                day.lunarText = solarTermHoliday!
+            }
+            let feastHoliday = date.holidayFeast()
+            if feastHoliday != nil {
+                day.lunarText = feastHoliday!
+            }
+            day.tooltip = "\(date.month())月\(date.day())日\(daysBeforeInfo) 第\(weekOfYear)周\n\(date.era())(\(date.zodiac()))年 \(lunarMonth)\(lunarDay)"
         }
         
         return day
@@ -237,4 +252,35 @@ extension TimeViewController {
         updateCurrentlyShownDays()
         updateCalendar()
     }
+    
+//    // 请求日历事件
+//    func events() {
+//        let eventStore = EKEventStore()
+//        eventStore.requestAccess(to: .event) { (granted, error) in
+//            if !granted || error != nil {
+//                return
+//            }
+//
+//            let calendars = eventStore.calendars(for: .event)
+//                .filter({ (calendar) -> Bool in
+//                return calendar.type == .subscription
+//            })
+//
+//            // 获取所有的事件（前后90天）
+//            let startDate = Date().from(year: 2018, month: 1, day: 1)
+//            let endDate = Date().from(year: 2018, month: 12, day: 31)
+//            let predicate2 = eventStore.predicateForEvents(withStart: startDate,
+//                                                           end: endDate, calendars: calendars)
+//
+//            print("查询范围 开始:\(startDate) 结束:\(endDate)")
+//
+//            if let eV = eventStore.events(matching: predicate2) as [EKEvent]? {
+//                for i in eV {
+//                    print("标题  \(i.title)" )
+//                    print("开始时间: \(i.startDate)" )
+//                    print("结束时间: \(i.endDate)" )
+//                }
+//            }
+//        }
+//    }
 }

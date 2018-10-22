@@ -29,7 +29,7 @@
 		9079DAAF21787DE1000AE30E /* StatusItemNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAAE21787DE1000AE30E /* StatusItemNetwork.swift */; };
 		9079DAB1217886F2000AE30E /* StatusItemBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAB0217886F2000AE30E /* StatusItemBattery.swift */; };
 		9079DAB321788766000AE30E /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAB221788766000AE30E /* Battery.swift */; };
-		907D9AE8217D68D600C028AB /* LunarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907D9AE7217D68D600C028AB /* LunarExtensions.swift */; };
+		907D9AEA217DC97F00C028AB /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907D9AE9217DC97F00C028AB /* DateHelper.swift */; };
 		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
 		90B54F762175C6DE007029D2 /* loginSystem.sh in Resources */ = {isa = PBXBuildFile; fileRef = 90B54F752175C6DE007029D2 /* loginSystem.sh */; };
 		90C9D7862176C67D008DBEF9 /* NewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9D7852176C67D008DBEF9 /* NewFile.swift */; };
@@ -107,7 +107,7 @@
 		9079DAAE21787DE1000AE30E /* StatusItemNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemNetwork.swift; sourceTree = "<group>"; };
 		9079DAB0217886F2000AE30E /* StatusItemBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemBattery.swift; sourceTree = "<group>"; };
 		9079DAB221788766000AE30E /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
-		907D9AE7217D68D600C028AB /* LunarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarExtensions.swift; sourceTree = "<group>"; };
+		907D9AE9217DC97F00C028AB /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		9087D3FA216B51C400793503 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		90B54F752175C6DE007029D2 /* loginSystem.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = loginSystem.sh; sourceTree = "<group>"; };
 		90C9D7852176C67D008DBEF9 /* NewFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFile.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				90124C3F217082F80036445D /* DateExtensions.swift */,
 				9053E5602173335200DFCA3A /* PhotoHelper.swift */,
 				9079DAB221788766000AE30E /* Battery.swift */,
-				907D9AE7217D68D600C028AB /* LunarExtensions.swift */,
+				907D9AE9217DC97F00C028AB /* DateHelper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -516,10 +516,10 @@
 				9079DAAF21787DE1000AE30E /* StatusItemNetwork.swift in Sources */,
 				90124C40217082F80036445D /* DateExtensions.swift in Sources */,
 				9079DAAB21786FFF000AE30E /* StatusItemTime.swift in Sources */,
-				907D9AE8217D68D600C028AB /* LunarExtensions.swift in Sources */,
 				9079DAB321788766000AE30E /* Battery.swift in Sources */,
 				9079DAB1217886F2000AE30E /* StatusItemBattery.swift in Sources */,
 				9053E5632173736F00DFCA3A /* VideoPreviewView.swift in Sources */,
+				907D9AEA217DC97F00C028AB /* DateHelper.swift in Sources */,
 				90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */,
 				9053E55F217331D100DFCA3A /* ImageCaptureViewController.swift in Sources */,
 				9079DAAD217871E6000AE30E /* StatusItemPopupBase.swift in Sources */,
