@@ -9,6 +9,9 @@
 import Cocoa
 
 class CalendarDayItem: NSCollectionViewItem {
+    
+    @IBOutlet weak var lunarTextField: NSTextField!
+    
     // https://github.com/ekreutz/CornerCal
     public func setHasRedBackground(hasRedBackground: Bool) {
         if (hasRedBackground) {
@@ -41,6 +44,10 @@ class CalendarDayItem: NSCollectionViewItem {
     
     public func setTooltip(text: String) {
         textField?.toolTip = text
+    }
+    
+    public func setLunar(text: String) {
+        lunarTextField.stringValue = text
     }
     
     override func viewDidLoad() {

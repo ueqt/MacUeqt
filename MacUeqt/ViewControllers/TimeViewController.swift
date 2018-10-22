@@ -15,6 +15,7 @@ struct Day {
     var isCurrentMonth = false
     var text = "0"
     var tooltip = ""
+    var lunarText = ""
 }
 
 class TimeViewController: NSViewController {
@@ -110,6 +111,7 @@ extension TimeViewController: NSCollectionViewDataSource {
         calendarItem.setText(text: day.text)
         calendarItem.setPartlyTransparent(partlyTransparent: !day.isCurrentMonth)
         calendarItem.setHasRedBackground(hasRedBackground: day.isToday)
+        calendarItem.setLunar(text: day.lunarText)
         calendarItem.setTooltip(text: day.tooltip)
         
         return calendarItem
@@ -192,7 +194,9 @@ extension TimeViewController {
                 daysBeforeInfo = "(\(abs(daysBefore))天后)"
             }
             let weekOfYear = Calendar.current.component(.weekOfYear, from: date)
-            day.tooltip = "\(date.month())月\(date.day())日\(daysBeforeInfo) 第\(weekOfYear)周"
+            let (lunarMonth, lunarDay) = date.convertGregorianToLunar()
+            day.lunarText = lunarDay == "初一" ? lunarMonth : lunarDay
+            day.tooltip = "\(date.month())月\(date.day())日\(daysBeforeInfo) 第\(weekOfYear)周\n\(lunarMonth)\(lunarDay)"
         }
         
         return day
