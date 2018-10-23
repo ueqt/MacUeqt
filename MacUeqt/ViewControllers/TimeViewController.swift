@@ -14,6 +14,7 @@ struct Day {
     var isNumber = false
     var isToday = false
     var isCurrentMonth = false
+    var workdayType = 0
     var text = "0"
     var tooltip = ""
     var lunarText = ""
@@ -21,6 +22,8 @@ struct Day {
 
 class TimeViewController: NSViewController {
 
+    // https://github.com/cyanzhong/LunarCore 小历内核
+    
     let calendar = Calendar.autoupdatingCurrent
     var dayZero: Date? = nil
     
@@ -114,6 +117,7 @@ extension TimeViewController: NSCollectionViewDataSource {
         calendarItem.setText(text: day.text)
         calendarItem.setPartlyTransparent(partlyTransparent: !day.isCurrentMonth)
         calendarItem.setHasRedBackground(hasRedBackground: day.isToday)
+        calendarItem.setWorkday(type: day.workdayType)
         calendarItem.setLunar(text: day.lunarText)
         calendarItem.setTooltip(text: day.tooltip)
         
@@ -188,6 +192,7 @@ extension TimeViewController {
             day.text = String(calendar.ordinality(of: .day, in: .month, for: date)!)
             day.isCurrentMonth = calendar.isDate(date, equalTo: currentMonth!, toGranularity: .month)
             day.isToday = calendar.isDateInToday(date)
+            day.workdayType = date.holidayWorktime()
             let today = Date().removeTimestamp()
             let daysBefore = date.daysFrom(date: today)
             var daysBeforeInfo = ""
@@ -210,6 +215,10 @@ extension TimeViewController {
             let feastHoliday = date.holidayFeast()
             if feastHoliday != nil {
                 day.lunarText = feastHoliday!
+            }
+            let lunarHoliday = date.holidayLunar()
+            if lunarHoliday != nil {
+                day.lunarText = lunarHoliday!
             }
             day.tooltip = "\(date.month())月\(date.day())日\(daysBeforeInfo) 第\(weekOfYear)周\n\(date.era())(\(date.zodiac()))年 \(lunarMonth)\(lunarDay)"
         }

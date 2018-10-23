@@ -8,28 +8,41 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CalendarDayItem" customModule="MacUeqt" customModuleProvider="target">
             <connections>
                 <outlet property="lunarTextField" destination="hSC-i8-mCq" id="exy-jm-NZe"/>
+                <outlet property="workTextField" destination="iKE-Qt-xxB" id="OhJ-GF-U2O"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="26" height="23"/>
+            <rect key="frame" x="0.0" y="0.0" width="30" height="23"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKE-Qt-xxB">
+                    <rect key="frame" x="20" y="15" width="12" height="8"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="LJz-yG-Jop"/>
+                        <constraint firstAttribute="height" constant="8" id="bb9-v5-evu"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="休" id="7HD-xh-kCb">
+                        <font key="font" metaFont="system" size="6"/>
+                        <color key="textColor" red="0.71372549019999998" green="0.89019607840000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H3W-Qf-oFD">
-                    <rect key="frame" x="0.0" y="11" width="27" height="12"/>
+                    <rect key="frame" x="2" y="11" width="27" height="12"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="12" id="Y25-mr-KvV"/>
                         <constraint firstAttribute="width" constant="23" id="a8w-4h-BMe"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" focusRingType="none" alignment="center" title="00" id="lSu-tI-efJ">
-                        <font key="font" metaFont="systemBold" size="11"/>
+                        <font key="font" metaFont="smallSystemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hSC-i8-mCq">
-                    <rect key="frame" x="-2" y="0.0" width="30" height="11"/>
+                    <rect key="frame" x="-2" y="0.0" width="34" height="11"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="正月" id="Ap0-CZ-5lH">
                         <font key="font" metaFont="system" size="8"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -38,10 +51,12 @@
                 </textField>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="iKE-Qt-xxB" secondAttribute="trailing" id="SCS-VV-3gg"/>
                 <constraint firstItem="H3W-Qf-oFD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="cTR-SD-AmO"/>
                 <constraint firstItem="hSC-i8-mCq" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="iTD-Ge-lxz"/>
                 <constraint firstItem="H3W-Qf-oFD" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="jfi-Dg-7yo"/>
                 <constraint firstItem="hSC-i8-mCq" firstAttribute="top" secondItem="H3W-Qf-oFD" secondAttribute="bottom" id="k58-IP-BS4"/>
+                <constraint firstItem="iKE-Qt-xxB" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="mAz-50-qmw"/>
                 <constraint firstItem="hSC-i8-mCq" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="nov-Iw-SBN"/>
                 <constraint firstAttribute="bottom" secondItem="hSC-i8-mCq" secondAttribute="bottom" id="oXc-qs-ezQ"/>
                 <constraint firstAttribute="trailing" secondItem="hSC-i8-mCq" secondAttribute="trailing" id="ukG-oU-Vfv"/>
@@ -52,6 +67,7 @@
                 <outlet property="lunarTextField" destination="hSC-i8-mCq" id="XRb-Wd-UOg"/>
                 <outlet property="textField" destination="H3W-Qf-oFD" id="5hL-dW-Kop"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="DDt-0u-I4W"/>
+                <outlet property="workTextField" destination="iKE-Qt-xxB" id="3Ft-Kr-gYH"/>
             </connections>
         </customObject>
     </objects>

@@ -18,7 +18,7 @@ class AppDelegate: NSObject {
     static let statusItemMainView = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     static let statusItemMain = StatusItemMain()
     // 时间
-    static let statusItemTimeView = NSStatusBar.system.statusItem(withLength: 62.0)
+    static let statusItemTimeView = NSStatusBar.system.statusItem(withLength: 64.0)
     static let statusItemTime = StatusItemTime()
     // 网络
     static let statusItemNetworkView = NSStatusBar.system.statusItem(withLength: 62.0)

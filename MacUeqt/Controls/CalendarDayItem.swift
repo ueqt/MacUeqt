@@ -11,17 +11,34 @@ import Cocoa
 class CalendarDayItem: NSCollectionViewItem {
 
     @IBOutlet weak var lunarTextField: NSTextField!
-
+    @IBOutlet weak var workTextField: NSTextField!
+    
     // https://github.com/ekreutz/CornerCal
     public func setHasRedBackground(hasRedBackground: Bool) {
         if (hasRedBackground) {
-            view.layer?.cornerRadius = (view.layer?.frame.width)! / 2
+            view.layer?.cornerRadius = (view.layer?.frame.width)! / 10
             view.layer?.backgroundColor = NSColor.red.cgColor
             textField?.textColor = NSColor.white
         } else {
             view.layer?.cornerRadius = 0
             view.layer?.backgroundColor = CGColor.clear
             textField?.textColor = NSColor.textColor
+        }
+    }
+    
+    public func setWorkday(type: Int) {
+        if type == 1 {
+            // work
+            workTextField.isHidden = false
+            workTextField.stringValue = "班"
+            workTextField.textColor = NSColor.yellow
+        } else if type == 2 {
+            // rest
+            workTextField.isHidden = false
+            workTextField.stringValue = "休"
+            workTextField.textColor = NSColor.magenta
+        } else {
+            workTextField.isHidden = true
         }
     }
 

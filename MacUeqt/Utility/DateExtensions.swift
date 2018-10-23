@@ -19,19 +19,47 @@ extension Date {
     
     func year() -> String {
         let calendar = Calendar.current
-        let year = calendar.component(Calendar.Component.year, from: self as Date)
+        let year = calendar.component(.year, from: self)
         return String(format: "%04d", year)
     }
     
     func month() -> String {
         let calendar = Calendar.current
-        let month = calendar.component(Calendar.Component.month, from: self as Date)
+        let month = calendar.component(.month, from: self)
         return String(format: "%02d", month)
+    }
+    
+    func monthDays() -> Int {
+        let calendar = Calendar.current
+        return (calendar.range(of: .day, in: .month, for: self)?.count)!
     }
     
     func day() -> String {
         let calendar = Calendar.current
-        let day = calendar.component(Calendar.Component.day, from: self as Date)
+        let day = calendar.component(.day, from: self)
+        return String(format: "%02d", day)
+    }
+    
+    func lunarYear() -> String {
+        let calendar = Calendar(identifier: .chinese)
+        let year = calendar.component(.year, from: self)
+        return String(format: "%04d", year)
+    }
+    
+    func lunarMonth() -> String {
+        let calendar = Calendar(identifier: .chinese)
+        let month = calendar.component(.month, from: self)
+        return String(format: "%02d", month)
+    }
+    
+    func lunarMonthDays() -> Int {
+        let calendar = Calendar(identifier: .chinese)
+        return (calendar.range(of: .day, in: .month, for: self)?.count)!
+    }
+    
+    func lunarDay() -> String {
+        let calendar = Calendar(identifier: .chinese)
+        let day = calendar.component(.day, from: self)
         return String(format: "%02d", day)
     }
     
@@ -82,6 +110,8 @@ extension Date {
         return (d_month as! String, d_day as! String)
     }
     
+    // https://github.com/cyanzhong/LunarCore 小历内核
+    
     // https://www.cnblogs.com/silence-cnblogs/p/6368437.html
     // 计算日期年份的生肖
     func zodiac(withYear year: Int) -> String {
@@ -118,6 +148,17 @@ extension Date {
         return holidays[key]
     }
     
+    func holidayLunar() -> String? {
+        // 除夕
+        if self.lunarMonth() == "12" && Int(self.lunarDay()) == self.lunarMonthDays() {
+            return "除夕"
+        }
+        // 农历节日
+        let holidays = ["0101":"春节","0115":"元宵节","0202":"龙抬头","0505":"端午节","0707":"七夕节","0715":"中元节","0815":"中秋节","0909":"重阳节","1001":"寒衣节","1015":"下元节","1208":"腊八节","1223":"小年"]
+        let key = self.lunarMonth() + self.lunarDay()
+        return holidays[key]
+    }
+    
     func holidayConstellation() -> String? {
         // 十二星座
         let holidays = ["0321":"白羊座","0421":"金牛座","0522":"双子座","0622":"巨蟹座","0723":"狮子座","0824":"处女座","0924":"天秤座","1024":"天蝎座","1123":"射手座","1222":"摩羯座","0121":"水瓶座","0220":"双鱼座"]
@@ -139,6 +180,30 @@ extension Date {
         } else {
             return nil
         }
+    }
+    
+    func holidayWorktime() -> Int {
+        // 中国节日放假安排，外部设置，0无特殊安排，1工作，2放假
+        let worktime = [
+        "y2013":
+            ["d0101":2,"d0102":2,"d0103":2,"d0105":1,"d0106":1,"d0209":2,"d0210":2,"d0211":2,"d0212":2,"d0213":2,"d0214":2,"d0215":2,"d0216":1,"d0217":1,"d0404":2,"d0405":2,"d0406":2,"d0407":1,"d0427":1,"d0428":1,"d0429":2,"d0430":2,"d0501":2,"d0608":1,"d0609":1,"d0610":2,"d0611":2,"d0612":2,"d0919":2,"d0920":2,"d0921":2,"d0922":1,"d0929":1,"d1001":2,"d1002":2,"d1003":2,"d1004":2,"d1005":2,"d1006":2,"d1007":2,"d1012":1],
+        "y2014":
+            ["d0101":2,"d0126":1,"d0131":2,"d0201":2,"d0202":2,"d0203":2,"d0204":2,"d0205":2,"d0206":2,"d0208":1,"d0405":2,"d0407":2,"d0501":2,"d0502":2,"d0503":2,"d0504":1,"d0602":2,"d0908":2,"d0928":1,"d1001":2,"d1002":2,"d1003":2,"d1004":2,"d1005":2,"d1006":2,"d1007":2,"d1011":1],
+        "y2015":
+            ["d0101":2,"d0102":2,"d0103":2,"d0104":1,"d0215":1,"d0218":2,"d0219":2,"d0220":2,"d0221":2,"d0222":2,"d0223":2,"d0224":2,"d0228":1,"d0404":2,"d0405":2,"d0406":2,"d0501":2,"d0502":2,"d0503":2,"d0620":2,"d0621":2,"d0622":2,"d0903":2,"d0904":2,"d0905":2,"d0906":1,"d0926":2,"d0927":2,"d1001":2,"d1002":2,"d1003":2,"d1004":2,"d1005":2,"d1006":2,"d1007":2,"d1010":1],
+        "y2016":
+            ["d0101":2,"d0102":2,"d0103":2,"d0206":1,"d0207":2,"d0208":2,"d0209":2,"d0210":2,"d0211":2,"d0212":2,"d0213":2,"d0214":1,"d0402":2,"d0403":2,"d0404":2,"d0430":2,"d0501":2,"d0502":2,"d0609":2,"d0610":2,"d0611":2,"d0612":1,"d0915":2,"d0916":2,"d0917":2,"d0918":1,"d1001":2,"d1002":2,"d1003":2,"d1004":2,"d1005":2,"d1006":2,"d1007":2,"d1008":1,"d1009":1],
+        "y2017":
+            ["d0101":2,"d0102":2,"d0122":1,"d0127":2,"d0128":2,"d0129":2,"d0130":2,"d0131":2,"d0201":2,"d0202":2,"d0204":1,"d0401":1,"d0402":2,"d0403":2,"d0404":2,"d0429":2,"d0430":2,"d0501":2,"d0527":1,"d0528":2,"d0529":2,"d0530":2,"d0930":1,"d1001":2,"d1002":2,"d1003":2,"d1004":2,"d1005":2,"d1006":2,"d1007":2,"d1008":2,"d1230":2,"d1231":2],
+        "y2018":
+            ["d0101":2,"d0211":1,"d0215":2,"d0216":2,"d0217":2,"d0218":2,"d0219":2,"d0220":2,"d0221":2,"d0224":1,"d0405":2,"d0406":2,"d0407":2,"d0408":1,"d0428":1,"d0429":2,"d0430":2,"d0501":2,"d0616":2,"d0617":2,"d0618":2,"d0922":2,"d0923":2,"d0924":2,"d0929":1,"d0930":1,"d1001":2,"d1002":2,"d1003":2,"d1004":2,"d1005":2,"d1006":2,"d1007":2]
+        ]
+        let ykey = "y\(self.year())"
+        guard let yy = worktime[ykey] else {
+            return 0
+        }
+        let key = "d\(self.month())\(self.day())"
+        return yy[key] ?? 0
     }
 }
 
