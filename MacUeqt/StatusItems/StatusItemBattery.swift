@@ -20,7 +20,8 @@ class StatusItemBattery {
         menuBattery?.addItem(NSMenuItem(title: "Capacity: ", action: nil, keyEquivalent: ""))
         menuBattery?.addItem(NSMenuItem(title: "Remaining time: ", action: nil, keyEquivalent: ""))
         AppDelegate.statusItemBatteryView.menu = menuBattery
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
+        self.updateBattery()
+        Timer.scheduledTimer(withTimeInterval: 600, repeats: true) { _ in
             self.updateBattery()
         }
     }
@@ -56,7 +57,7 @@ class StatusItemBattery {
         } else if batteryTime.timeInSeconds == -1.0 {
             timeValue = "calc."
         } else if batteryTime.timeInSeconds == -2.0 {
-            timeValue = "AC"
+            timeValue = "电源"
         }
         
         let font = NSFont(name: "Apple SD Gothic Neo Bold", size: 9.0)
@@ -74,10 +75,10 @@ class StatusItemBattery {
         
         // update the menu entry with the current remaining time
         let timeEntry = menuBattery?.item(at: 1)
-        timeEntry?.title = "Remaining time: " + timeValue!
+        timeEntry?.title = "剩余时间: " + timeValue!
         
         // update the menu entry with the current capacity
         let capacityEntry = menuBattery?.item(at: 0)
-        capacityEntry?.title = "Capacity: " + String(format: "%02d", Int(batteryCapacity!)) + "%"
+        capacityEntry?.title = "剩余容量: " + String(format: "%02d", Int(batteryCapacity!)) + "%"
     }
 }
