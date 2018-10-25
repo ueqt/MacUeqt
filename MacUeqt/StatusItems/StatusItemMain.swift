@@ -9,35 +9,53 @@
 import Foundation
 import Cocoa
 
-let blockMenuItemLengthLarge:CGFloat = 10000
-let largeSize = NSSize(width: 20, height: 18)
-let smallSize = NSSize(width: 12, height: 10)
-
 class StatusItemMain: StatusItemPopupBase {
     
-    var mainStatusItemWindowController: MainStatusItemWindowController!
-    var isExpand = false
+    let showLength: CGFloat = 20
+    let hideLength: CGFloat = 10000
+    var buttonImage: NSImage!
     
     override func show() {
         self.statusItem = AppDelegate.statusItemMainView
-        self.mainStatusItemWindowController = MainStatusItemWindowController(statusItemMain: self)
         super.show()
 
-        let icon = NSImage(named: NSImage.Name("AppIcon"))
-        icon?.isTemplate = true
-        icon?.size = largeSize
-
-        if let button = AppDelegate.statusItemMainView.button {
-            button.image = icon
-            button.action = #selector(mainMenuItemClicked)
-            button.sendAction(on: [.leftMouseDown, .rightMouseDown])
+        guard let button = AppDelegate.statusItemMainView.button else {
+            fatalError("main status item button failed")
         }
+        
+        self.buttonImage = NSImage(named: NSImage.Name("AppIcon"))
+        self.buttonImage.size = NSSize(width: 20, height: 18)
+        self.buttonImage.isTemplate = true
+
+        button.image = self.buttonImage
+        button.action = #selector(mainMenuItemClicked)
+        button.sendAction(on: [.leftMouseDown, .rightMouseDown])
 
         // https://github.com/Mortennn/Dozer
         // 把菜单左边的菜单都隐藏
-        mainStatusItemWindowController.createWindows()
+        self.hideStatusBar()
 
         self.popover.contentViewController = MainViewController.freshController()
+    }
+    
+    deinit {
+        print("main status item has been deallocated")
+    }
+    
+    func showStatusBar() {
+        self.statusItem?.length = showLength
+    }
+    
+    func hideStatusBar() {
+        self.statusItem?.length = hideLength
+    }
+    
+    func toggleStatusBar() {
+        if isShown {
+            hideStatusBar()
+        } else {
+            showStatusBar()
+        }
     }
     
     @IBAction func mainMenuItemClicked(_ sender: Any?) {
@@ -46,107 +64,55 @@ class StatusItemMain: StatusItemPopupBase {
             return
         }
         if currentEvent.type == .rightMouseDown {
-            if isExpand {
-                mainStatusItemWindowController.createWindows()
-            } else {
-                if mainStatusItemWindowController.windowInstances.count > 0 {
-                    let statusWindow = mainStatusItemWindowController.windowInstances[0] 
-                    statusWindow.showAll()
-                }
-            }
+            handleRightClick()
         } else if currentEvent.type == .leftMouseDown {
-            self.togglePopover(sender)
+            handleLeftClick()
         }
     }
-}
-
-final class MainStatusItemWindowController {
     
-    var statusItemMain: StatusItemMain!
-    
-    init(statusItemMain: StatusItemMain) {
-        self.statusItemMain = statusItemMain
+    internal func handleLeftClick() {
+        self.togglePopover(nil)
     }
     
-    var windowInstances:[MainStatusItemWindow] = []
+    internal func handleRightClick() {
+        self.toggleStatusBar()
+    }
     
-    public func createWindows() {
-        guard let statusItemBtnWindow = AppDelegate.statusItemMainView.button?.window else {
-            fatalError("get status item button window failed")
+    var isShown: Bool {
+        get {
+            return (statusItem?.length == showLength)
         }
-        
-        // removes all existing window instances
-        removeWindows()
-        let pixelsToRight = statusItemBtnWindow.screen!.frame.width-(statusItemBtnWindow.frame.origin.x-statusItemBtnWindow.screen!.frame.origin.x)
+    }
+    
+    internal func handleMouseMoved(mouseLocation:NSPoint) {
+        if isMouseInStatusBar(with: mouseLocation) && listenForMouseExit.shared.mouseHasExited {
+            self.showStatusBar()
+            listenForMouseExit.shared.mouseHasExited = false
+        } else if !isMouseInStatusBar(with: mouseLocation) {
+            listenForMouseExit.shared.mouseHasExited = true
+        }
+    }
+    
+    func isMouseInStatusBar(with mouseLocation:NSPoint) -> Bool {
+        let statusBarHeight = NSStatusBar.system.thickness
         for screen in NSScreen.screens {
-            let frame = NSRect(
-                x: screen.frame.width-pixelsToRight,
-                y: screen.frame.height-22,
-                width: 20,
-                height: 22)
-            let windowInstance = MainStatusItemWindow(frame: frame, screen:screen, statusItemMain: self.statusItemMain)
-            windowInstances.append(windowInstance)
-            windowInstance.orderFront(nil)
+            var frame = screen.frame
+            frame.origin.y = frame.origin.y + frame.height - statusBarHeight - 2
+            frame.size.height = statusBarHeight + 3
+            if frame.contains(mouseLocation) {
+                return true
+            }
         }
-        
-        AppDelegate.statusItemMainView.length = blockMenuItemLengthLarge
+        return false
     }
-    
-    public func removeWindows() {
-        let _ = windowInstances.map { $0.orderOut(nil) }
-        windowInstances = []
+}
+
+class listenForMouseExit {
+    static let shared = listenForMouseExit()
+    var mouseHasExited:Bool
+    private init() {
+        mouseHasExited = false
     }
 }
 
 
-final class MainStatusItemWindow: NSPanel {
-    
-    var statusItemMain: StatusItemMain!
-    public var backgroundView:NSImageView!
-    
-    convenience init(frame:NSRect, screen:NSScreen, statusItemMain: StatusItemMain) {
-        self.init(contentRect:frame, styleMask: [.nonactivatingPanel], backing: .buffered, defer: false, screen: screen)
-        self.statusItemMain = statusItemMain
-        self.isOpaque = false
-        self.hasShadow = false
-        self.titlebarAppearsTransparent = true
-        self.titleVisibility = .hidden
-        self.level = NSWindow.Level(rawValue: (NSWindow.Level.statusBar.rawValue))
-        self.collectionBehavior = [.canJoinAllSpaces, .fullScreenNone]
-        self.backgroundColor = NSColor(white: 1, alpha: 0)
-        let backgroundImageView = NSImageView()
-        backgroundImageView.autoresizingMask = [.height, .width]
-        backgroundImageView.image = AppDelegate.statusItemMainView.button?.image
-        backgroundImageView.image?.size = largeSize
-        backgroundImageView.frame = self.contentView!.frame
-        backgroundView = backgroundImageView
-        self.contentView!.addSubview(backgroundImageView)
-        self.ignoresMouseEvents = false
-        statusItemMain.isExpand = false
-    }
-    
-    override func mouseDown(with event: NSEvent) {
-        self.statusItemMain.togglePopover(nil)
-    }
-    
-    override func rightMouseDown(with event: NSEvent?) {
-        AppDelegate.statusItemMainView.length = 20
-        for window in self.statusItemMain.mainStatusItemWindowController.windowInstances {
-            window.orderOut(nil)
-        }
-        self.statusItemMain.mainStatusItemWindowController.windowInstances = []
-        AppDelegate.statusItemMainView.button?.image?.size = smallSize
-        self.statusItemMain.isExpand = true
-    }
-    
-    public func showAll() {
-        self.rightMouseDown(with: nil)
-    }
-    
-}
-
-extension NSStatusItem {
-    var isExpanded: Bool {
-        return (self.length == blockMenuItemLengthLarge)
-    }
-}

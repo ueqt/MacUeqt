@@ -15,7 +15,7 @@ extension Notification.Name {
 @NSApplicationMain
 class AppDelegate: NSObject {
     // 主菜单按钮
-    static let statusItemMainView = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    static let statusItemMainView = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     static let statusItemMain = StatusItemMain()
     // 时间
     static let statusItemTimeView = NSStatusBar.system.statusItem(withLength: 64.0)
@@ -61,6 +61,18 @@ extension AppDelegate: NSApplicationDelegate {
         NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(sleepListener), name: NSWorkspace.didWakeNotification, object: nil)
         NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(sleepListener), name: NSWorkspace.screensDidWakeNotification, object: nil)
         NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(sleepListener), name: NSWorkspace.screensDidSleepNotification, object: nil)
+        
+        // listen for enter statusbar
+        NSEvent.addLocalMonitorForEvents(matching: .mouseMoved) { (event) -> NSEvent? in
+            let mouseLocation = NSEvent.mouseLocation
+            AppDelegate.statusItemMain.handleMouseMoved(mouseLocation: mouseLocation)
+            return event
+        }
+        
+        NSEvent.addGlobalMonitorForEvents(matching: .mouseMoved) { (event) in
+            let mouseLocation = NSEvent.mouseLocation
+            AppDelegate.statusItemMain.handleMouseMoved(mouseLocation: mouseLocation)
+        }
     }
     
     @objc func sleepListener(aNotification: NSNotification) {
