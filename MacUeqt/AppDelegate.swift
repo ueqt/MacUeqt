@@ -95,6 +95,7 @@ extension AppDelegate: NSApplicationDelegate {
 //            photo.capture(imageView: nil)
 //            sleep(1)
 //            photo.stop()
+            AppDelegate.statusItemMain.hideStatusBar()
         default:
             print("\(aNotification.name) invoked")
         }
