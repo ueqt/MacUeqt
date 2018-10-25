@@ -32,6 +32,11 @@
 		907D9AEA217DC97F00C028AB /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907D9AE9217DC97F00C028AB /* DateHelper.swift */; };
 		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
 		90B54F762175C6DE007029D2 /* loginSystem.sh in Resources */ = {isa = PBXBuildFile; fileRef = 90B54F752175C6DE007029D2 /* loginSystem.sh */; };
+		90B791E521815FD3003D6971 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B791E021815FD3003D6971 /* calendar.png */; };
+		90B791E621815FD3003D6971 /* iTerm.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B791E121815FD3003D6971 /* iTerm.png */; };
+		90B791E721815FD3003D6971 /* bartendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B791E221815FD3003D6971 /* bartendar.png */; };
+		90B791E821815FD3003D6971 /* network.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B791E321815FD3003D6971 /* network.png */; };
+		90B791E921815FD3003D6971 /* newFile.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B791E421815FD3003D6971 /* newFile.png */; };
 		90C9D7862176C67D008DBEF9 /* NewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9D7852176C67D008DBEF9 /* NewFile.swift */; };
 		90E1A45A2174270700C35736 /* TestCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E1A4592174270700C35736 /* TestCameraViewController.swift */; };
 		90F0F6992160AB81007C83D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F0F6982160AB81007C83D1 /* AppDelegate.swift */; };
@@ -110,6 +115,11 @@
 		907D9AE9217DC97F00C028AB /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		9087D3FA216B51C400793503 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		90B54F752175C6DE007029D2 /* loginSystem.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = loginSystem.sh; sourceTree = "<group>"; };
+		90B791E021815FD3003D6971 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		90B791E121815FD3003D6971 /* iTerm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTerm.png; sourceTree = "<group>"; };
+		90B791E221815FD3003D6971 /* bartendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bartendar.png; sourceTree = "<group>"; };
+		90B791E321815FD3003D6971 /* network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = network.png; sourceTree = "<group>"; };
+		90B791E421815FD3003D6971 /* newFile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newFile.png; sourceTree = "<group>"; };
 		90C9D7852176C67D008DBEF9 /* NewFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFile.swift; sourceTree = "<group>"; };
 		90DA21422160AD2F0044AE39 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90DA21492160B4E60044AE39 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -246,6 +256,26 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		90B791DE21815E09003D6971 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				90B791DF21815E12003D6971 /* images */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		90B791DF21815E12003D6971 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				90B791E221815FD3003D6971 /* bartendar.png */,
+				90B791E021815FD3003D6971 /* calendar.png */,
+				90B791E121815FD3003D6971 /* iTerm.png */,
+				90B791E321815FD3003D6971 /* network.png */,
+				90B791E421815FD3003D6971 /* newFile.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		90C27033216784BA00BBDBF8 /* Finder */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +288,7 @@
 		90F0F68C2160AB81007C83D1 = {
 			isa = PBXGroup;
 			children = (
+				90B791DE21815E09003D6971 /* docs */,
 				90DA21492160B4E60044AE39 /* .gitignore */,
 				90DA21422160AD2F0044AE39 /* README.md */,
 				90F0F6972160AB81007C83D1 /* MacUeqt */,
@@ -472,11 +503,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B791E521815FD3003D6971 /* calendar.png in Resources */,
 				90F0F69D2160AB83007C83D1 /* Assets.xcassets in Resources */,
 				904D50CF21663E9200ABC9C9 /* openIterm.scpt in Resources */,
 				9051A7912166368E003D01A6 /* finderCurrentPath.scpt in Resources */,
+				90B791E821815FD3003D6971 /* network.png in Resources */,
+				90B791E921815FD3003D6971 /* newFile.png in Resources */,
 				90F0F6A02160AB83007C83D1 /* Main.storyboard in Resources */,
+				90B791E621815FD3003D6971 /* iTerm.png in Resources */,
 				9045A53A2179794E002140D3 /* CalendarDayItem.xib in Resources */,
+				90B791E721815FD3003D6971 /* bartendar.png in Resources */,
 				90B54F762175C6DE007029D2 /* loginSystem.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

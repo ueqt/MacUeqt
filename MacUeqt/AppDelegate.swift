@@ -40,10 +40,12 @@ extension AppDelegate: NSApplicationDelegate {
     // https://www.raywenderlich.com/450-menus-and-popovers-in-menu-bar-apps-for-macos
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 //        AppDelegate.statusItemMainIcon.button?.addSubview(StatusBarViewController.freshController().view)
-        AppDelegate.statusItemMain.show()
         AppDelegate.statusItemTime.show()
         AppDelegate.statusItemNetwork.show()
 //        AppDelegate.statusItemBattery.show()
+        
+        // 这个要放最后，否则会和日期重叠
+        AppDelegate.statusItemMain.show()
         
         // start at login
         let startAtLoginAppIdentifer = "ueqt.xu.MacUeqtStartAtLogin"

@@ -12,9 +12,13 @@ Ueqt's Mac Assistant
 
 [x] Open Finder current path in iTerm from `Main Icon Menu` -> `Finder` -> `iTerm`
 
+![](docs/images/iTerm.png)
+
 ### New File Creation
 
 [x] Create new file at Finder current path from `Main Icon Menu`->`Finder`->`New File`
+
+![](docs/images/newFile.png)
 
 ### Unlox
 
@@ -22,11 +26,15 @@ Ueqt's Mac Assistant
 
 ### TinyCal(小历)
 
-[ ] Calendar
+[x] Calendar
+
+![](docs/images/calendar.png)
 
 ### 腾讯电脑管家 
 
 [x] Network usage
+
+![](docs/images/network.png)
 
 ### system battery
 
@@ -34,7 +42,9 @@ Ueqt's Mac Assistant
 
 ### Bartendar
 
-[ ] Status bar control
+[x] Status bar control - use right click main icon to toggle expandable status bar
+
+![](docs/images/bartendar.png)
 
 
 ## Other Feature
