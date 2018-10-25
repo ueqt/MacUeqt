@@ -46,6 +46,22 @@ Ueqt's Mac Assistant
 
 ![](docs/images/bartendar.png)
 
+### Mounty, NTFS Assistant
+
+[ ] ntfs support fuse for macos
+
+### gas mask, hoststools
+
+[ ] hosts manager
+
+### SSH Proxy
+
+[ ] ssh proxy, ssh management
+
+### Xnip
+
+[ ] scroll capture
+
 
 ## Other Feature
 
