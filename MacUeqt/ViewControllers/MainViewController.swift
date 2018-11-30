@@ -15,7 +15,8 @@ class MainViewController: NSViewController {
     @IBOutlet weak var popupButton: NSButton!
     @IBOutlet var popupMenu: NSMenu!
     @IBOutlet weak var startAtLoginCheckMenu: NSMenuItem!
-    
+    @IBOutlet weak var noSleepCheckMenu: NSMenuItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +24,8 @@ class MainViewController: NSViewController {
         
         // start at login
         self.startAtLoginCheckMenu.state = UserDefaults.standard.bool(forKey: "startAtLogin") ? .on : .off
+        
+        self.noSleepCheckMenu.state = UserDefaults.standard.bool(forKey: "noSleep") ? .on : .off
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -58,6 +61,17 @@ extension MainViewController {
             UserDefaults.standard.set(isAuto, forKey: "startAtLogin")
             self.startAtLoginCheckMenu.state = isAuto ? .on : .off
         }
+    }
+    
+    @IBAction func toggleNoSleep(_ sender: NSMenuItem) {
+        let isNoSleep = !(sender.state == .on)
+        if isNoSleep {
+            CaffeinateHelper.start()
+        } else {
+            CaffeinateHelper.stop()
+        }
+        UserDefaults.standard.set(isNoSleep, forKey: "noSleep")
+        self.noSleepCheckMenu.state = isNoSleep ? .on : .off
     }
 }
 

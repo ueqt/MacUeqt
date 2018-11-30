@@ -56,6 +56,11 @@ extension AppDelegate: NSApplicationDelegate {
             DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier)
         }
         
+        // Caffeinate
+        if UserDefaults.standard.bool(forKey: "noSleep") {
+            CaffeinateHelper.start()
+        }
+        
 //        不太实用，先注释掉吧
         // listener system sleep and awake event, only put in AppDelegate can work...
 //        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(sleepListener), name: NSWorkspace.willSleepNotification, object: nil)

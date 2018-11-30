@@ -46,6 +46,12 @@ Ueqt's Mac Assistant
 
 ![](docs/images/bartendar.png)
 
+### Caffeine, Theine, Amphetamine
+
+[x ] No sleep
+
+![](docs/images/caffeinate.png)
+
 ### Mounty, NTFS Assistant
 
 [ ] ntfs support fuse for macos

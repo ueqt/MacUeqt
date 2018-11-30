@@ -31,6 +31,8 @@
 		9079DAB321788766000AE30E /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079DAB221788766000AE30E /* Battery.swift */; };
 		907D9AEA217DC97F00C028AB /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907D9AE9217DC97F00C028AB /* DateHelper.swift */; };
 		9087D3FB216B51C400793503 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9087D3FA216B51C400793503 /* ServiceManagement.framework */; };
+		9093692721B0D167001D5195 /* CaffeinateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093692621B0D167001D5195 /* CaffeinateHelper.swift */; };
+		9093692B21B0DC52001D5195 /* caffeinate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9093692A21B0DC52001D5195 /* caffeinate.png */; };
 		90B54F762175C6DE007029D2 /* loginSystem.sh in Resources */ = {isa = PBXBuildFile; fileRef = 90B54F752175C6DE007029D2 /* loginSystem.sh */; };
 		90B791E521815FD3003D6971 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B791E021815FD3003D6971 /* calendar.png */; };
 		90B791E621815FD3003D6971 /* iTerm.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B791E121815FD3003D6971 /* iTerm.png */; };
@@ -114,6 +116,8 @@
 		9079DAB221788766000AE30E /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 		907D9AE9217DC97F00C028AB /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		9087D3FA216B51C400793503 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		9093692621B0D167001D5195 /* CaffeinateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateHelper.swift; sourceTree = "<group>"; };
+		9093692A21B0DC52001D5195 /* caffeinate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffeinate.png; sourceTree = "<group>"; };
 		90B54F752175C6DE007029D2 /* loginSystem.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = loginSystem.sh; sourceTree = "<group>"; };
 		90B791E021815FD3003D6971 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		90B791E121815FD3003D6971 /* iTerm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTerm.png; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				9053E5602173335200DFCA3A /* PhotoHelper.swift */,
 				9079DAB221788766000AE30E /* Battery.swift */,
 				907D9AE9217DC97F00C028AB /* DateHelper.swift */,
+				9093692621B0D167001D5195 /* CaffeinateHelper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 		90B791DF21815E12003D6971 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9093692A21B0DC52001D5195 /* caffeinate.png */,
 				90B791E221815FD3003D6971 /* bartendar.png */,
 				90B791E021815FD3003D6971 /* calendar.png */,
 				90B791E121815FD3003D6971 /* iTerm.png */,
@@ -510,6 +516,7 @@
 				90B791E821815FD3003D6971 /* network.png in Resources */,
 				90B791E921815FD3003D6971 /* newFile.png in Resources */,
 				90F0F6A02160AB83007C83D1 /* Main.storyboard in Resources */,
+				9093692B21B0DC52001D5195 /* caffeinate.png in Resources */,
 				90B791E621815FD3003D6971 /* iTerm.png in Resources */,
 				9045A53A2179794E002140D3 /* CalendarDayItem.xib in Resources */,
 				90B791E721815FD3003D6971 /* bartendar.png in Resources */,
@@ -555,6 +562,7 @@
 				9079DAB321788766000AE30E /* Battery.swift in Sources */,
 				9079DAB1217886F2000AE30E /* StatusItemBattery.swift in Sources */,
 				9053E5632173736F00DFCA3A /* VideoPreviewView.swift in Sources */,
+				9093692721B0D167001D5195 /* CaffeinateHelper.swift in Sources */,
 				907D9AEA217DC97F00C028AB /* DateHelper.swift in Sources */,
 				90197F97216A2A6F0079C027 /* MainViewController.swift in Sources */,
 				9053E55F217331D100DFCA3A /* ImageCaptureViewController.swift in Sources */,
